@@ -131,12 +131,12 @@ function HeroSection() {
 function TrustStrip() {
   return (
     <section className="bg-[#071E63] text-white">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-2 gap-px bg-white/20 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <div className="grid w-full grid-cols-4 gap-px bg-white/20 lg:mx-auto lg:max-w-7xl">
         {trustStats.map((stat) => (
-          <div key={stat.label} className="min-h-28 bg-[#071E63] px-2 py-5 text-center">
-            <p className="text-3xl font-black text-[#FFD447]">{stat.value}</p>
-            <p className="mt-1 text-sm font-extrabold">{stat.label}</p>
-            <p className="mt-1 text-xs font-bold text-white/70">{stat.tamil}</p>
+          <div key={stat.label} className="min-h-16 bg-[#071E63] px-1 py-3 text-center sm:min-h-28 sm:px-2 sm:py-5">
+            <p className="text-lg font-black leading-none text-[#FFD447] min-[390px]:text-xl sm:text-3xl">{stat.value}</p>
+            <p className="mt-1 text-[9px] font-extrabold leading-tight min-[390px]:text-[10px] sm:text-sm">{stat.label}</p>
+            <p className="mt-1 hidden text-xs font-bold text-white/70 sm:block">{stat.tamil}</p>
           </div>
         ))}
       </div>
