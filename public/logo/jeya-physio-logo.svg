@@ -1,0 +1,14 @@
+<svg width="640" height="220" viewBox="0 0 640 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path d="M85 31C49.1 31 20 60.1 20 96c0 48.5 56 80.5 112 80.5h23.5c11 0 20-9 20-20v-15.3h-41.7c-30.7 0-62.8-15.1-62.8-43.2 0-7.7 6.3-14 14-14h83.6c9.5 0 17.2-7.7 17.2-17.2V31H85Z" fill="#E51B23"/>
+    <path d="M84.6 59.5h73.2v25.2H87.4c-7.4 0-13.4 6-13.4 13.4 0 17.5 23.6 29 59.3 29h42.2v28.7h-42.2c-47.1 0-87.5-23.1-87.5-59.8 0-20.2 16.8-36.5 38.8-36.5Z" fill="white"/>
+    <path d="M121.5 111.5c10.2 0 18.5-8.3 18.5-18.5s-8.3-18.5-18.5-18.5S103 82.8 103 93s8.3 18.5 18.5 18.5Z" fill="#071E63"/>
+    <path d="M121.5 101.5a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z" fill="#FFD447"/>
+    <path d="M178.5 38h16v124h-16z" fill="#071E63"/>
+    <text x="220" y="79" fill="#E51B23" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" letter-spacing="0">Jeya Physio Clinic</text>
+    <text x="221" y="122" fill="#071E63" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">ஜெயா பிசியோ கிளினிக்</text>
+    <text x="222" y="160" fill="#071E63" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">Dr. X. Sagila Jeyasilin, B.P.T, MIAP</text>
+    <rect x="222" y="176" width="205" height="28" rx="14" fill="#FFD447"/>
+    <text x="238" y="197" fill="#071E63" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">94867 33238</text>
+  </g>
+</svg>
