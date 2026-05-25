@@ -1,20 +1,33 @@
 import type { Metadata, Viewport } from "next";
+import { Manrope, Noto_Sans_Tamil } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const notoSansTamil = Noto_Sans_Tamil({
+  subsets: ["tamil"],
+  variable: "--font-tamil",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Jeya Physio Clinic | Physiotherapy in Dindigul",
+  title: "Jeya Physiotherapy Clinic | Physiotherapy in Dindigul",
   description:
-    "Jeya Physio Clinic in East Govindapuram, Dindigul. Care by Dr. X. Sagila Jeyasilin, B.P.T, MIAP. Call 94454 39296 33238.",
+    "Jeya Physiotherapy Clinic in East Govindapuram, Dindigul. Care by Dr. X.Dr.x.sasikala jeyaceline, B.P.T, MIAP. WhatsApp 94454 39296.",
   keywords: [
-    "Jeya Physio Clinic",
+    "Jeya Physiotherapy Clinic",
     "physiotherapy Dindigul",
     "back pain treatment Dindigul",
     "knee pain physiotherapy",
-    "Dr Sagila Jeyasilin",
+    "DrDr.x.sasikala jeyaceline",
   ],
   openGraph: {
-    title: "Jeya Physio Clinic",
+    title: "Jeya Physiotherapy Clinic",
     description: "Premium local physiotherapy care in East Govindapuram, Dindigul.",
     images: ["/images/hero-physiotherapy.png"],
   },
@@ -33,7 +46,11 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${manrope.variable} ${notoSansTamil.variable}`}
+      suppressHydrationWarning
+    >
       <body>{children}</body>
     </html>
   );

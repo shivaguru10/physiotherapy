@@ -1,5 +1,17 @@
 import Image from "next/image";
 import {
+  Bone,
+  Brain,
+  Certificate,
+  FaceMask,
+  FirstAid,
+  HandHeart,
+  Heartbeat,
+  PersonSimpleWalk,
+  UserFocus,
+  Wheelchair,
+} from "@phosphor-icons/react/dist/ssr";
+import {
   Activity,
   Award,
   BadgeCheck,
@@ -24,16 +36,13 @@ import {
   clinic,
   faqs,
   recoverySteps,
-  serviceCards,
-  tamilTreatmentTags,
-  treatmentTags,
   trustStats,
 } from "@/lib/clinic";
 
 const careHighlights = [
   {
     icon: Award,
-    title: "Qualified Physio",
+    title: "Qualified Physiotherapist",
     tamil: "தகுதி பெற்ற சிகிச்சை",
     text: "Care led by a B.P.T, MIAP physiotherapist.",
   },
@@ -62,6 +71,117 @@ const clinicFeatures = [
   { icon: Stethoscope, label: "Manual therapy support" },
   { icon: Dumbbell, label: "Exercise therapy" },
   { icon: ShieldCheck, label: "Posture correction" },
+];
+
+const premiumConditions = [
+  {
+    icon: FirstAid,
+    title: "Neck pain",
+    text: "Focused care for stiffness, posture strain, and daily movement discomfort.",
+  },
+  {
+    icon: Bone,
+    title: "Back pain",
+    text: "Support for lower back pain, spine stress, and mobility limitations.",
+  },
+  {
+    icon: PersonSimpleWalk,
+    title: "Knee pain",
+    text: "Strength, walking confidence, and joint comfort for everyday activity.",
+  },
+  {
+    icon: Brain,
+    title: "Paralysis rehab",
+    text: "Guided neuro rehabilitation for weakness, control, and functional recovery.",
+  },
+  {
+    icon: FaceMask,
+    title: "Facial palsy",
+    text: "Gentle therapy support for facial muscle weakness and nerve recovery.",
+  },
+  {
+    icon: Wheelchair,
+    title: "Elderly mobility",
+    text: "Balance, safer movement, and confidence support for senior patients.",
+  },
+];
+
+const treatmentShowcases = [
+  {
+    image: "/images/therapy-elderly-mobility.png",
+    title: "Elderly mobility and balance care",
+    tamil: "முதியோர் இயக்கம் மற்றும் சமநிலை பராமரிப்பு",
+    text: "Guided support for walking confidence, balance, weakness, and safer daily movement.",
+    points: ["Balance training", "Weakness recovery", "Safe movement practice"],
+  },
+  {
+    image: "/images/therapy-back-pain.png",
+    title: "Back, neck and posture therapy",
+    tamil: "முதுகு, கழுத்து மற்றும் உடல் நிலை சிகிச்சை",
+    text: "Focused assessment and treatment for pain caused by posture, stiffness, and spine stress.",
+    points: ["Neck pain", "Back pain", "Posture correction"],
+  },
+  {
+    image: "/images/therapy-neuro-rehab.png",
+    title: "Neuro and family rehabilitation",
+    tamil: "நரம்பு மற்றும் குடும்ப மீட்பு சிகிச்சை",
+    text: "Patient-friendly rehabilitation for paralysis, hand or leg weakness, and long-term recovery needs.",
+    points: ["Paralysis rehab", "Hand and leg weakness", "Functional recovery"],
+  },
+];
+
+const treatmentCounters = [
+  { value: "18+", label: "Pain and rehab concerns covered" },
+  { value: "2", label: "Daily consultation sessions" },
+  { value: "1:1", label: "Assessment-first care plan" },
+  { value: "B.P.T", label: "Qualified physiotherapy care" },
+];
+
+const flyerConditionGroups = [
+  [
+    "கழுத்து வலி",
+    "இடுப்பு வலி",
+    "முதுகு வலி",
+    "மூட்டு வலி",
+    "தோள்பட்டை வலி",
+    "குதிகால் வலி",
+    "தசைப்பிடிப்பு",
+    "சுளுக்கு",
+  ],
+  [
+    "நரம்பு அழுத்தம்",
+    "ஜவ்வு விலகுதல்",
+    "முழங்கால் வலி",
+    "மூட்டு தேய்மானம்",
+    "பக்கவாதம்",
+    "முகவாதம்",
+    "கை, கால் செயலிழப்பு",
+    "தண்டுவட பாதிப்பு",
+    "பிறவிக்குறைபாடு",
+  ],
+];
+
+const doctorTrust = [
+  { icon: Certificate, label: "Qualification", value: clinic.qualification },
+  { icon: HandHeart, label: "Care style", value: "Patient-first physiotherapy care" },
+  { icon: Heartbeat, label: "Focus", value: "Pain relief and movement recovery" },
+  { icon: UserFocus, label: "Experience", value: "Clinical experience details can be added" },
+];
+
+const footerQuickLinks = [
+  { label: "Home", href: "#home" },
+  { label: "Treatments", href: "#treatments" },
+  { label: "Doctor", href: "#doctor" },
+  { label: "Timing", href: "#timing" },
+  { label: "Location", href: "#location" },
+  { label: "Questions", href: "#questions" },
+];
+
+const footerServices = [
+  "Pain relief care",
+  "Neuro rehabilitation",
+  "Elderly mobility",
+  "Posture correction",
 ];
 
 export default function Home() {
@@ -178,29 +298,43 @@ function TreatmentsSection() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Treatments"
-          title="Pain relief and recovery care"
-          tamil="வலி நிவாரணம் மற்றும் மீட்பு சிகிச்சை"
-          text="Visual service cards keep the important treatments easy to understand without reading long paragraphs."
+          title="Pain relief, mobility and rehabilitation care"
+          tamil="வலி நிவாரணம், இயக்கம் மற்றும் மீட்பு சிகிச்சை"
+          text="A clearer treatment section with real therapy visuals, quick counters, and the clinic flyer conditions arranged for easy mobile scanning."
         />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {serviceCards.map((card) => (
-            <article key={card.title} className="overflow-hidden rounded-lg bg-white shadow-xl shadow-[#071E63]/10">
-              <div className="relative aspect-square">
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {treatmentShowcases.map((care, index) => (
+            <article
+              key={care.title}
+              className={
+                index === 0
+                  ? "overflow-hidden rounded-lg bg-white shadow-2xl shadow-[#071E63]/15 lg:col-span-2"
+                  : "overflow-hidden rounded-lg bg-white shadow-xl shadow-[#071E63]/10"
+              }
+            >
+              <div className={index === 0 ? "relative min-h-[360px] sm:min-h-[460px]" : "relative min-h-[280px] sm:min-h-[340px]"}>
                 <Image
-                  src={card.image}
-                  alt={`${card.title} physiotherapy care`}
+                  src={care.image}
+                  alt={`${care.title} at Jeya Physiotherapy Clinic`}
                   fill
-                  sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  sizes={index === 0 ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, 100vw"}
                   className="object-cover"
                 />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,30,99,0)_34%,rgba(7,30,99,0.92)_100%)]" />
+                <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-6">
+                  <p className="text-xs font-black uppercase tracking-[0.12em] text-[#FFD447]">
+                    {index === 0 ? "Featured care" : "Treatment focus"}
+                  </p>
+                  <h3 className="mt-2 text-2xl font-black leading-tight sm:text-3xl">{care.title}</h3>
+                  <p className="mt-1 text-base font-extrabold text-[#FFD447]">{care.tamil}</p>
+                  <p className="mt-3 max-w-2xl text-sm font-semibold leading-6 text-white/85">{care.text}</p>
+                </div>
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-black text-[#071E63]">{card.title}</h3>
-                <p className="mt-1 text-sm font-extrabold text-[#E51B23]">{card.tamil}</p>
-                <ul className="mt-4 space-y-2">
-                  {card.points.map((point) => (
-                    <li key={point} className="flex gap-2 text-sm font-semibold text-slate-700">
-                      <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-[#0F9F9A]" aria-hidden="true" />
+                <ul className="grid gap-2 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                  {care.points.map((point) => (
+                    <li key={point} className="flex min-h-11 items-center gap-2 rounded-lg bg-[#F7FAFF] px-3 py-2 text-sm font-black text-[#071E63]">
+                      <CheckCircle2 className="size-4 shrink-0 text-[#0F9F9A]" aria-hidden="true" />
                       {point}
                     </li>
                   ))}
@@ -209,26 +343,57 @@ function TreatmentsSection() {
             </article>
           ))}
         </div>
-        <div className="mt-10 grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div className="rounded-lg bg-[#071E63] p-6 text-white">
-            <h3 className="text-2xl font-black">Common problems treated</h3>
-            <p className="mt-2 text-sm font-bold text-white/75">
-              The original clinic flyer lists these common pain and rehab needs.
+        <div className="mt-6 grid gap-px overflow-hidden rounded-lg bg-[#071E63]/15 sm:grid-cols-4">
+          {treatmentCounters.map((counter) => (
+            <div key={counter.label} className="bg-white px-4 py-5 text-center">
+              <p className="text-3xl font-black leading-none text-[#E51B23]">{counter.value}</p>
+              <p className="mt-2 text-sm font-black leading-5 text-[#071E63]">{counter.label}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 rounded-lg bg-white p-5 shadow-xl shadow-[#071E63]/10 sm:p-7">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.12em] text-[#E51B23]">Conditions treated</p>
+              <h3 className="mt-2 text-2xl font-black text-[#071E63] sm:text-3xl">
+                Flyer-listed problems, cleaned up for easy reading
+              </h3>
+            </div>
+            <p className="max-w-xl text-sm font-semibold leading-6 text-slate-700 sm:text-right">
+              The original Tamil flyer items are grouped clearly so patients can quickly find their pain, nerve, joint, or mobility concern.
             </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {tamilTreatmentTags.map((tag) => (
-                <span key={tag} className="rounded-lg bg-white/10 px-3 py-2 text-sm font-extrabold text-[#FFD447]">
-                  {tag}
-                </span>
+          </div>
+          <div className="mt-6 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="grid gap-3 sm:grid-cols-2">
+              {premiumConditions.map((condition) => (
+                <article
+                  key={condition.title}
+                  className="group rounded-lg border border-[#071E63]/10 bg-[#FFFDF6] p-4 transition hover:-translate-y-1 hover:border-[#0F9F9A]/35 hover:bg-white hover:shadow-xl hover:shadow-[#071E63]/10"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-[#EAF8F7] text-[#0F7F7B] ring-1 ring-[#0F9F9A]/15 transition group-hover:bg-[#071E63] group-hover:text-[#FFD447]">
+                      <condition.icon className="size-6" weight="duotone" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-black text-[#071E63]">{condition.title}</h4>
+                      <p className="mt-1 text-xs font-semibold leading-5 text-slate-700">{condition.text}</p>
+                    </div>
+                  </div>
+                </article>
               ))}
             </div>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {treatmentTags.map((tag) => (
-              <span key={tag} className="rounded-lg border border-[#071E63]/10 bg-white px-3 py-2 text-sm font-bold text-[#071E63] shadow-sm">
-                {tag}
-              </span>
-            ))}
+            <div className="grid gap-3 rounded-lg bg-[#071E63] p-4 text-white sm:grid-cols-2">
+              {flyerConditionGroups.map((group, groupIndex) => (
+                <ul key={groupIndex} className="space-y-2">
+                  {group.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-base font-extrabold leading-6 text-white">
+                      <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-[#FFD447]" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -239,18 +404,25 @@ function TreatmentsSection() {
 function DoctorSection() {
   return (
     <section id="doctor" className="bg-white py-14 sm:py-20">
-      <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:px-8">
-        <div className="relative min-h-[340px] overflow-hidden rounded-lg bg-[#071E63] sm:min-h-[480px]">
+      <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
+        <div className="relative min-h-[380px] overflow-hidden rounded-lg bg-[#071E63] shadow-2xl shadow-[#071E63]/15 sm:min-h-[520px]">
           <Image
             src="/images/therapy-elderly-mobility.png"
-            alt="Physiotherapy support for elderly mobility"
+            alt="Physiotherapist supporting elderly mobility and recovery"
             fill
             sizes="(min-width: 1024px) 45vw, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-x-0 bottom-0 bg-[#071E63]/90 p-5 text-white">
-            <p className="text-sm font-extrabold text-[#FFD447]">Personalized physiotherapy care</p>
-            <p className="mt-1 text-lg font-black">For pain, balance, weakness, and movement recovery</p>
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,30,99,0.04)_0%,rgba(7,30,99,0.15)_38%,rgba(7,30,99,0.92)_100%)]" />
+          <div className="absolute left-4 top-4 rounded-lg bg-white/92 px-4 py-3 text-[#071E63] shadow-lg shadow-black/10 backdrop-blur">
+            <p className="text-xs font-black uppercase tracking-[0.12em] text-[#E51B23]">Doctor trust</p>
+            <p className="mt-1 text-lg font-black">{clinic.qualification}</p>
+          </div>
+          <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7">
+            <p className="text-sm font-extrabold text-[#FFD447]">Patient-first physiotherapy care</p>
+            <p className="mt-2 text-2xl font-black leading-tight">
+              Practical treatment for pain, balance, weakness, and movement recovery
+            </p>
           </div>
         </div>
         <div>
@@ -258,19 +430,45 @@ function DoctorSection() {
             eyebrow="Doctor"
             title={`Care by ${clinic.doctor}`}
             tamil={clinic.tamilDoctor}
-            text={`${clinic.qualification} qualified physiotherapy care with a practical, patient-friendly approach for local families.`}
+            text={`${clinic.qualification} qualified physiotherapy care with a calm, practical, patient-first approach for local families.`}
           />
-          <div className="mt-7 grid gap-3 sm:grid-cols-2">
+          <div className="mt-7 rounded-lg border border-[#071E63]/10 bg-[#FFFDF6] p-5 shadow-xl shadow-[#071E63]/5 sm:p-6">
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-black uppercase tracking-[0.12em] text-[#E51B23]">Profile</p>
+                <h3 className="mt-2 text-2xl font-black text-[#071E63]">{clinic.doctor}</h3>
+                <p className="mt-1 text-base font-extrabold text-slate-700">{clinic.qualification}</p>
+              </div>
+              <div className="rounded-lg bg-[#071E63] px-4 py-3 text-white">
+                <p className="text-xs font-black uppercase tracking-[0.12em] text-[#FFD447]">Experience</p>
+                <p className="mt-1 text-sm font-bold">Add years here when available</p>
+              </div>
+            </div>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {doctorTrust.map((item) => (
+                <div key={item.label} className="flex min-h-20 items-center gap-3 rounded-lg border border-[#071E63]/10 bg-white p-4">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-[#FFF3BE] text-[#071E63] ring-1 ring-[#071E63]/10">
+                    <item.icon className="size-5" weight="duotone" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-black uppercase tracking-[0.08em] text-[#E51B23]">{item.label}</p>
+                    <p className="mt-1 text-sm font-black leading-5 text-[#071E63]">{item.value}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {clinicFeatures.map((feature) => (
-              <div key={feature.label} className="flex min-h-20 items-center gap-3 rounded-lg border border-slate-200 bg-[#FFFDF6] p-4">
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-[#071E63]/10 bg-[#FFF3BE] text-[#071E63]">
+              <div key={feature.label} className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-white p-4">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-[#071E63]/10 bg-[#F7FAFF] text-[#071E63]">
                   <feature.icon className="size-5 stroke-[1.8]" aria-hidden="true" />
                 </div>
-                <p className="text-base font-black text-[#071E63]">{feature.label}</p>
+                <p className="text-sm font-black text-[#071E63]">{feature.label}</p>
               </div>
             ))}
           </div>
-          <div className="mt-7 rounded-lg bg-[#FFD447] p-5 text-[#071E63]">
+          <div className="mt-5 rounded-lg bg-[#FFD447] p-5 text-[#071E63]">
             <p className="text-sm font-black uppercase">Call before visit</p>
             <p className="mt-2 text-2xl font-black">{clinic.phoneDisplay}</p>
             <p className="mt-2 text-sm font-bold">
@@ -336,30 +534,49 @@ function TimingLocationSection() {
               ))}
             </div>
           </div>
-          <div id="location" className="rounded-lg bg-[#071E63] p-6 text-white sm:p-8">
-            <div className="flex size-14 items-center justify-center rounded-lg bg-[#FFD447] text-[#071E63]">
-              <Navigation className="size-7" aria-hidden="true" />
+          <div id="location" className="overflow-hidden rounded-lg bg-[#071E63] text-white shadow-2xl shadow-[#071E63]/20">
+            <div className="relative h-[360px] bg-[#071E63] sm:h-[430px]">
+              <iframe
+                src={clinic.mapsEmbedHref}
+                title="Street view near Jeya Physiotherapy Clinic, East Govindapuram, Dindigul"
+                className="absolute inset-0 h-full w-full border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,rgba(7,30,99,0.7)_0%,rgba(7,30,99,0)_100%)]" />
+              <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-lg bg-white/95 px-4 py-3 text-sm font-black text-[#071E63] shadow-xl shadow-black/15 backdrop-blur">
+                <Navigation className="size-5 text-[#E51B23]" aria-hidden="true" />
+                Street View
+              </div>
             </div>
-            <h2 className="mt-6 text-3xl font-black">East Govindapuram, Dindigul</h2>
-            <p className="mt-3 text-lg font-bold leading-8 text-white/90">{clinic.address}</p>
-            <p className="mt-4 rounded-lg bg-white/10 p-4 text-base font-extrabold leading-7 text-[#FFD447]">
-              {clinic.tamilAddress}
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={clinic.mapsHref}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#FFD447] px-4 text-sm font-black text-[#071E63]"
-              >
-                <MapPinned className="size-4" aria-hidden="true" />
-                Open Directions
-              </a>
-              <a
-                href={clinic.phoneHref}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/25 px-4 text-sm font-black text-white"
-              >
-                <PhoneCall className="size-4" aria-hidden="true" />
-                Call Clinic
-              </a>
+            <div className="p-6 sm:p-8">
+              <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+                <div>
+                  <p className="text-sm font-black uppercase tracking-[0.12em] text-[#FFD447]">Clinic location</p>
+                  <h2 className="mt-2 text-3xl font-black">East Govindapuram, Dindigul</h2>
+                  <p className="mt-3 text-base font-bold leading-7 text-white/90 sm:text-lg sm:leading-8">{clinic.address}</p>
+                </div>
+                <div className="rounded-lg bg-white/10 p-4 text-sm font-extrabold leading-7 text-[#FFD447] lg:max-w-sm">
+                  {clinic.tamilAddress}
+                </div>
+              </div>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <a
+                  href={clinic.mapsHref}
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-[#FFD447] px-4 text-sm font-black text-[#071E63] shadow-lg shadow-black/10 transition hover:-translate-y-0.5 hover:bg-white"
+                >
+                  <MapPinned className="size-5" aria-hidden="true" />
+                  Open Directions
+                </a>
+                <a
+                  href={clinic.phoneHref}
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/10 px-4 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-white hover:text-[#071E63]"
+                >
+                  <PhoneCall className="size-5" aria-hidden="true" />
+                  Call Clinic
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -370,7 +587,7 @@ function TimingLocationSection() {
 
 function FaqSection() {
   return (
-    <section className="bg-[#FFF7D6] py-14 sm:py-20">
+    <section id="questions" className="bg-[#FFF7D6] py-14 sm:py-20">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Questions"
@@ -398,17 +615,71 @@ function FaqSection() {
 
 function Footer() {
   return (
-    <footer className="bg-[#071E63] pb-28 pt-10 text-white md:pb-24">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
-        <div>
-          <p className="text-2xl font-black">{clinic.name}</p>
-          <p className="mt-1 font-bold text-[#FFD447]">{clinic.tamilName}</p>
-          <p className="mt-2 text-sm font-semibold text-white/70">{clinic.doctor}, {clinic.qualification}</p>
+    <footer className="bg-[#071E63] pb-24 pt-10 text-white sm:pb-10">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-6 border-b border-white/15 pb-7 sm:grid-cols-[1.25fr_0.75fr] lg:grid-cols-[1.25fr_0.75fr_0.8fr_0.95fr]">
+          <div>
+            <p className="text-2xl font-black leading-tight">{clinic.name}</p>
+            <p className="mt-1 font-bold text-[#FFD447]">{clinic.tamilName}</p>
+            <p className="mt-3 max-w-md text-sm font-semibold leading-6 text-white/72">
+              Patient-first physiotherapy care for pain relief, mobility, neuro rehabilitation, and local families in Dindigul.
+            </p>
+            <p className="mt-3 text-sm font-black text-white">{clinic.doctor}</p>
+            <p className="mt-1 text-sm font-bold text-white/70">{clinic.qualification}</p>
+          </div>
+
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Quick links</p>
+            <nav className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm" aria-label="Footer quick links">
+              {footerQuickLinks.map((link) => (
+                <a key={link.href} href={link.href} className="font-bold text-white/75 transition hover:text-[#FFD447]">
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Care</p>
+            <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm lg:grid-cols-1">
+              {footerServices.map((service) => (
+                <li key={service} className="flex items-center gap-2 font-bold text-white/75">
+                  <CheckCircle2 className="size-4 shrink-0 text-[#0F9F9A]" aria-hidden="true" />
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Visit</p>
+            <p className="mt-4 text-sm font-semibold leading-6 text-white/75">{clinic.address}</p>
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              <a
+                href={clinic.mapsHref}
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#FFD447] px-3 text-xs font-black text-[#071E63] transition hover:bg-white"
+              >
+                <MapPinned className="size-4" aria-hidden="true" />
+                Direction
+              </a>
+              <a
+                href={clinic.phoneHref}
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 text-xs font-black text-white transition hover:bg-white hover:text-[#071E63]"
+              >
+                <PhoneCall className="size-4" aria-hidden="true" />
+                Call
+              </a>
+            </div>
+          </div>
         </div>
-        <a href={clinic.mapsHref} className="inline-flex items-center gap-2 text-sm font-black text-[#FFD447]">
-          View clinic location
-          <MoveRight className="size-4" aria-hidden="true" />
-        </a>
+
+        <div className="grid grid-cols-2 items-center gap-3 py-5 text-xs font-bold text-white/60 sm:flex sm:justify-between">
+          <p>© 2026 {clinic.name}</p>
+          <a href="#home" className="inline-flex items-center justify-end gap-2 text-[#FFD447] transition hover:text-white">
+            Back to top
+            <MoveRight className="size-4" aria-hidden="true" />
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <a href="#home" className="flex min-w-0 items-center gap-2" aria-label="Jeya Physio Clinic home">
+    <a href="#home" className="flex min-w-0 items-center gap-2" aria-label="Jeya Physiotherapy Clinic home">
       <Image
         src="/logo/jeya-physio-logo.png"
-        alt="Jeya Physio Clinic"
+        alt="Jeya Physiotherapy Clinic"
         width={compact ? 220 : 276}
         height={compact ? 60 : 75}
         priority

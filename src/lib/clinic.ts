@@ -1,15 +1,17 @@
 export const clinic = {
-  name: "Jeya Physio Clinic",
+  name: "Jeya Physiotherapy Clinic",
   tamilName: "ஜெயா பிசியோ கிளினிக்",
-  doctor: "Dr. X. Sagila Jeyasilin",
+  doctor: "Dr. X.Dr.x.sasikala jeyaceline",
   tamilDoctor: "Dr. X. சகிலா ஜெயசிலின்",
   qualification: "B.P.T, MIAP",
-  phoneDisplay: "94454 39296 33238",
-  phoneHref: "tel:+9194454 3929633238",
+  phoneDisplay: "94454 39296",
+  phoneHref: "tel:+919445439296",
   whatsappHref:
-    "https://wa.me/9194454 3929633238?text=Hi%2C%20I%20want%20to%20book%20a%20physiotherapy%20appointment.",
+    "https://wa.me/919445439296?text=Hi%2C%20I%20want%20to%20book%20a%20physiotherapy%20appointment.",
   mapsHref:
-    "https://www.google.com/maps/search/?api=1&query=89%20East%20Govindapuram%20Dindigul%20624001%20Jeya%20Physio%20Clinic",
+    "https://www.google.com/maps/search/?api=1&query=89%20East%20Govindapuram%20Dindigul%20624001%20Jeya%20Physiotherapy%20Clinic",
+  mapsEmbedHref:
+    "https://www.google.com/maps/embed?pb=!4v1779714909280!6m8!1m7!1sJ1kZxyhW-PWJ8pxQ4JX-Ug!2m2!1d10.37104805586831!2d77.97344026865146!3f175.65960555401816!4f0.13927050375711758!5f0.7820865974627469",
   address:
     "Opposite Saiva Perumakkal Peravai Thirumana Mandapam, 89, East Govindapuram, Dindigul - 624001.",
   tamilAddress:
