@@ -1,23 +1,22 @@
 import Image from "next/image";
 import {
   Activity,
+  Award,
   BadgeCheck,
   CalendarClock,
   CheckCircle2,
   ClipboardCheck,
   Clock3,
   Dumbbell,
-  Footprints,
   HeartPulse,
+  MapPin,
   MapPinned,
   MoveRight,
   Navigation,
   PhoneCall,
   ShieldCheck,
-  Sparkles,
   Stethoscope,
 } from "lucide-react";
-import { ContactActions } from "@/components/contact-actions";
 import { SectionHeading } from "@/components/section-heading";
 import { SiteHeader } from "@/components/site-header";
 import { StickyActions } from "@/components/sticky-actions";
@@ -33,7 +32,7 @@ import {
 
 const careHighlights = [
   {
-    icon: ShieldCheck,
+    icon: Award,
     title: "Qualified Physio",
     tamil: "தகுதி பெற்ற சிகிச்சை",
     text: "Care led by a B.P.T, MIAP physiotherapist.",
@@ -45,13 +44,13 @@ const careHighlights = [
     text: "Focused support for daily pain and movement limits.",
   },
   {
-    icon: Footprints,
+    icon: Activity,
     title: "Rehab Support",
     tamil: "மீட்பு சிகிச்சை",
     text: "Guided recovery for weakness, balance, and mobility.",
   },
   {
-    icon: MapPinned,
+    icon: MapPin,
     title: "Easy Local Visit",
     tamil: "திண்டுக்கல் கிளினிக்",
     text: "Landmark-based location in East Govindapuram.",
@@ -59,10 +58,10 @@ const careHighlights = [
 ];
 
 const clinicFeatures = [
-  { icon: Stethoscope, label: "Assessment-first care" },
+  { icon: ClipboardCheck, label: "Assessment-first care" },
+  { icon: Stethoscope, label: "Manual therapy support" },
   { icon: Dumbbell, label: "Exercise therapy" },
-  { icon: Activity, label: "Manual therapy support" },
-  { icon: Sparkles, label: "Posture correction" },
+  { icon: ShieldCheck, label: "Posture correction" },
 ];
 
 export default function Home() {
@@ -87,34 +86,31 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[76svh] overflow-hidden bg-[#071E63]">
+    <section className="relative min-h-[72svh] overflow-hidden bg-[#071E63]">
       <Image
         src="/images/hero-physiotherapy.png"
         alt="Physiotherapist assisting a patient with shoulder mobility therapy"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-[68%_center]"
       />
-      <div className="absolute inset-0 bg-[#071E63]/70" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,30,99,0.98)_0%,rgba(7,30,99,0.86)_44%,rgba(7,30,99,0.22)_100%)]" />
-      <div className="relative mx-auto flex min-h-[76svh] w-full max-w-7xl items-center px-4 py-14 sm:px-6 lg:px-8">
-        <div className="max-w-3xl text-white">
+      <div className="absolute inset-0 bg-[#071E63]/45" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,30,99,0.98)_0%,rgba(7,30,99,0.88)_42%,rgba(7,30,99,0.42)_74%,rgba(7,30,99,0.18)_100%)]" />
+      <div className="relative mx-auto flex min-h-[72svh] w-full max-w-7xl items-center px-4 py-12 sm:px-6 lg:px-8">
+        <div className="max-w-2xl text-white">
           <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-lg bg-[#FFD447] px-3 py-2 text-xs font-black text-[#071E63] shadow-lg shadow-black/10 sm:text-sm">
             <BadgeCheck className="size-4 shrink-0" aria-hidden="true" />
             <span className="truncate">{clinic.doctor}, {clinic.qualification}</span>
           </div>
           <p className="text-lg font-black text-[#FFD447] sm:text-2xl">{clinic.tamilName}</p>
-          <h1 className="mt-2 max-w-[11ch] text-[2.35rem] font-black leading-none text-white sm:max-w-[12ch] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-2 max-w-[11ch] text-[2.35rem] font-black leading-none text-white sm:max-w-[12ch] sm:text-5xl lg:text-6xl">
             {clinic.name}
           </h1>
-          <p className="mt-5 max-w-2xl text-lg font-bold leading-7 text-white/90 sm:text-2xl sm:leading-9">
+          <p className="mt-5 max-w-xl text-lg font-bold leading-7 text-white/90 sm:text-2xl sm:leading-9">
             Advanced physiotherapy care for pain relief, movement recovery, and local families in Dindigul.
           </p>
-          <div className="mt-7 max-w-xl">
-            <ContactActions />
-          </div>
-          <div className="mt-6 grid max-w-2xl grid-cols-1 gap-3 text-sm font-bold text-white/90 sm:grid-cols-3">
+          <div className="mt-7 grid max-w-2xl grid-cols-1 gap-3 text-sm font-bold text-white/90 sm:grid-cols-3">
             {clinic.timings.map((time) => (
               <div key={time.label} className="flex min-h-14 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 backdrop-blur">
                 <Clock3 className="size-4 shrink-0 text-[#FFD447]" aria-hidden="true" />
@@ -161,8 +157,8 @@ function CareHighlights() {
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {careHighlights.map((item) => (
             <div key={item.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="flex size-12 items-center justify-center rounded-lg bg-[#FFD447] text-[#071E63]">
-                <item.icon className="size-6" aria-hidden="true" />
+              <div className="flex size-12 items-center justify-center rounded-lg border border-[#071E63]/10 bg-[#F7FAFF] text-[#071E63]">
+                <item.icon className="size-5 stroke-[1.8]" aria-hidden="true" />
               </div>
               <h3 className="mt-4 text-lg font-black text-[#071E63]">{item.title}</h3>
               <p className="mt-1 text-sm font-extrabold text-[#E51B23]">{item.tamil}</p>
@@ -266,8 +262,8 @@ function DoctorSection() {
           <div className="mt-7 grid gap-3 sm:grid-cols-2">
             {clinicFeatures.map((feature) => (
               <div key={feature.label} className="flex min-h-20 items-center gap-3 rounded-lg border border-slate-200 bg-[#FFFDF6] p-4">
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-[#E51B23] text-white">
-                  <feature.icon className="size-5" aria-hidden="true" />
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-lg border border-[#071E63]/10 bg-[#FFF3BE] text-[#071E63]">
+                  <feature.icon className="size-5 stroke-[1.8]" aria-hidden="true" />
                 </div>
                 <p className="text-base font-black text-[#071E63]">{feature.label}</p>
               </div>

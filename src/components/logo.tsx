@@ -4,12 +4,12 @@ export function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <a href="#home" className="flex min-w-0 items-center gap-2" aria-label="Jeya Physio Clinic home">
       <Image
-        src="/logo/jeya-physio-logo.svg"
+        src="/logo/jeya-physio-logo.png"
         alt="Jeya Physio Clinic"
-        width={compact ? 188 : 244}
-        height={compact ? 65 : 84}
+        width={compact ? 220 : 276}
+        height={compact ? 60 : 75}
         priority
-        className="h-auto w-[154px] sm:w-[210px] lg:w-[244px]"
+        className="h-auto w-[158px] sm:w-[220px] lg:w-[276px]"
       />
     </a>
   );

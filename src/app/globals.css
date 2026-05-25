@@ -21,7 +21,7 @@ body {
   background: #fffdf6;
   color: #162033;
   font-family: Arial, Helvetica, sans-serif;
-  padding-bottom: 96px;
+  padding-bottom: 0;
 }
 
 img {
@@ -31,4 +31,23 @@ img {
 ::selection {
   background: var(--clinic-yellow);
   color: var(--clinic-navy);
+}
+
+@keyframes contact-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.contact-float {
+  animation: contact-float 2.8s ease-in-out infinite;
+}
+
+.contact-float-delay {
+  animation-delay: 0.45s;
 }
