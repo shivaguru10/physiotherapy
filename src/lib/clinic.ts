@@ -4,10 +4,10 @@ export const clinic = {
   doctor: "Dr. X. Sagila Jeyasilin",
   tamilDoctor: "Dr. X. சகிலா ஜெயசிலின்",
   qualification: "B.P.T, MIAP",
-  phoneDisplay: "94867 33238",
-  phoneHref: "tel:+919486733238",
+  phoneDisplay: "94454 39296 33238",
+  phoneHref: "tel:+9194454 3929633238",
   whatsappHref:
-    "https://wa.me/919486733238?text=Hi%2C%20I%20want%20to%20book%20a%20physiotherapy%20appointment.",
+    "https://wa.me/9194454 3929633238?text=Hi%2C%20I%20want%20to%20book%20a%20physiotherapy%20appointment.",
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=89%20East%20Govindapuram%20Dindigul%20624001%20Jeya%20Physio%20Clinic",
   address:

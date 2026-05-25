@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Jeya Physio Clinic | Physiotherapy in Dindigul",
   description:
-    "Jeya Physio Clinic in East Govindapuram, Dindigul. Care by Dr. X. Sagila Jeyasilin, B.P.T, MIAP. Call 94867 33238.",
+    "Jeya Physio Clinic in East Govindapuram, Dindigul. Care by Dr. X. Sagila Jeyasilin, B.P.T, MIAP. Call 94454 39296 33238.",
   keywords: [
     "Jeya Physio Clinic",
     "physiotherapy Dindigul",

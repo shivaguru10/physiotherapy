@@ -155,15 +155,15 @@ function CareHighlights() {
           text="Big contact actions, real treatment visuals, Tamil support, timing, and location are kept clear for mobile users."
           align="center"
         />
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {careHighlights.map((item) => (
-            <div key={item.title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="flex size-12 items-center justify-center rounded-lg border border-[#071E63]/10 bg-[#F7FAFF] text-[#071E63]">
-                <item.icon className="size-5 stroke-[1.8]" aria-hidden="true" />
+            <div key={item.title} className="rounded-lg border border-slate-200 bg-white p-3 shadow-sm sm:p-5">
+              <div className="flex size-10 items-center justify-center rounded-lg border border-[#071E63]/10 bg-[#F7FAFF] text-[#071E63] sm:size-12">
+                <item.icon className="size-4 stroke-[1.8] sm:size-5" aria-hidden="true" />
               </div>
-              <h3 className="mt-4 text-lg font-black text-[#071E63]">{item.title}</h3>
-              <p className="mt-1 text-sm font-extrabold text-[#E51B23]">{item.tamil}</p>
-              <p className="mt-3 text-sm leading-6 text-slate-700">{item.text}</p>
+              <h3 className="mt-3 text-sm font-black leading-tight text-[#071E63] sm:mt-4 sm:text-lg">{item.title}</h3>
+              <p className="mt-1 text-xs font-extrabold leading-tight text-[#E51B23] sm:text-sm">{item.tamil}</p>
+              <p className="mt-2 text-xs leading-5 text-slate-700 sm:mt-3 sm:text-sm sm:leading-6">{item.text}</p>
             </div>
           ))}
         </div>
