@@ -452,7 +452,7 @@ function DoctorSection() {
               </div>
               <div className="rounded-lg bg-[#071E63] px-4 py-3 text-white">
                 <p className="text-xs font-black uppercase tracking-[0.12em] text-[#FFD447]">Experience</p>
-                <p className="mt-1 text-sm font-bold">10 +</p>
+                <p className="mt-1 text-sm font-bold">19 + years</p>
               </div>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -699,7 +699,7 @@ function Footer() {
             href="https://www.blitzsolutions.online/"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex max-w-full flex-wrap items-center gap-2 justify-self-start rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white/70 transition hover:border-[#FFD447]/40 hover:bg-white/10 hover:text-white sm:flex-nowrap sm:justify-self-end"
+            className="inline-flex max-w-full flex-wrap items-center gap-2 justify-self-start rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white/70 transition hover:border-[#FFD447]/40 hover:bg-white/10 hover:text-white sm:flex-nowrap sm:justify-self-end lg:mr-36 xl:mr-44"
           >
             <span>Designed & developed by</span>
             <span className="inline-flex min-h-8 items-center rounded-full bg-white px-3 shadow-sm">
