@@ -1,8 +1,8 @@
 export const clinic = {
   name: "Jeya Physiotherapy Clinic",
   tamilName: "ஜெயா பிசியோ கிளினிக்",
-  doctor: "Dr. X.Dr.x.sasikala jeyaceline",
-  tamilDoctor: "Dr. X. சகிலா ஜெயசிலின்",
+  doctor: "Dr. X.sasikala jeyaceline",
+  tamilDoctor: "Dr. X. சசிகலா ஜெயசிலின்",
   qualification: "B.P.T, MIAP",
   phoneDisplay: "94454 39296",
   phoneHref: "tel:+919445439296",

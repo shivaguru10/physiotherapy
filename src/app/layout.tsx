@@ -51,7 +51,7 @@ export default function RootLayout({
       className={`${manrope.variable} ${notoSansTamil.variable}`}
       suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

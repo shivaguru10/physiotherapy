@@ -13,6 +13,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import {
   Activity,
+  ArrowUp,
   Award,
   BadgeCheck,
   CalendarClock,
@@ -23,7 +24,6 @@ import {
   HeartPulse,
   MapPin,
   MapPinned,
-  MoveRight,
   Navigation,
   PhoneCall,
   ShieldCheck,
@@ -171,6 +171,7 @@ const doctorTrust = [
 const footerQuickLinks = [
   { label: "Home", href: "#home" },
   { label: "Treatments", href: "#treatments" },
+  { label: "Conditions", href: "#conditions" },
   { label: "Doctor", href: "#doctor" },
   { label: "Timing", href: "#timing" },
   { label: "Location", href: "#location" },
@@ -191,9 +192,10 @@ export default function Home() {
       <main id="home" className="overflow-hidden">
         <HeroSection />
         <TrustStrip />
+        <ConditionsTreatedSection />
         <TreatmentsSection />
-        <CareHighlights />
         
+        <CareHighlights />
         <DoctorSection />
         <RecoverySection />
         <TimingLocationSection />
@@ -351,7 +353,16 @@ function TreatmentsSection() {
             </div>
           ))}
         </div>
-        <div className="mt-12 rounded-lg bg-white p-5 shadow-xl shadow-[#071E63]/10 sm:p-7">
+      </div>
+    </section>
+  );
+}
+
+function ConditionsTreatedSection() {
+  return (
+    <section id="conditions" className="bg-white py-14 sm:py-20">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-lg bg-[#FFF7D6] p-5 shadow-xl shadow-[#071E63]/10 sm:p-7">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.12em] text-[#E51B23]">Conditions treated</p>
@@ -615,9 +626,18 @@ function FaqSection() {
 
 function Footer() {
   return (
-    <footer className="bg-[#071E63] pb-24 pt-10 text-white sm:pb-10">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-6 border-b border-white/15 pb-7 sm:grid-cols-[1.25fr_0.75fr] lg:grid-cols-[1.25fr_0.75fr_0.8fr_0.95fr]">
+    <footer className="relative bg-[#071E63] pb-32 pt-10 text-white sm:pb-10">
+      <div className="pointer-events-none sticky bottom-44 z-20 mx-auto h-0 w-full max-w-7xl px-4 sm:bottom-36 sm:px-6 lg:px-8">
+        <a
+          href="#home"
+          className="pointer-events-auto ml-auto flex size-12 items-center justify-center rounded-full bg-[#FFD447] text-[#071E63] shadow-xl shadow-yellow-950/20 ring-4 ring-white/90 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFD447] sm:size-14"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="size-6" strokeWidth={3} aria-hidden="true" />
+        </a>
+      </div>
+      <div className="mx-auto w-full max-w-7xl px-4 pr-20 sm:px-6 lg:px-8">
+        <div className="grid gap-7 border-b border-white/15 pb-7 sm:grid-cols-[1.25fr_0.75fr] lg:grid-cols-[1.25fr_0.75fr_0.8fr_1.05fr]">
           <div>
             <p className="text-2xl font-black leading-tight">{clinic.name}</p>
             <p className="mt-1 font-bold text-[#FFD447]">{clinic.tamilName}</p>
@@ -651,20 +671,20 @@ function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="sm:col-span-2 lg:col-span-1">
             <p className="text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Visit</p>
             <p className="mt-4 text-sm font-semibold leading-6 text-white/75">{clinic.address}</p>
-            <div className="mt-4 grid grid-cols-2 gap-2">
+            <div className="mt-4 grid gap-2 min-[420px]:grid-cols-2">
               <a
                 href={clinic.mapsHref}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#FFD447] px-3 text-xs font-black text-[#071E63] transition hover:bg-white"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#FFD447] px-3 text-sm font-black text-[#071E63] transition hover:bg-white"
               >
                 <MapPinned className="size-4" aria-hidden="true" />
                 Direction
               </a>
               <a
                 href={clinic.phoneHref}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 text-xs font-black text-white transition hover:bg-white hover:text-[#071E63]"
+                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 text-sm font-black text-white transition hover:bg-white hover:text-[#071E63]"
               >
                 <PhoneCall className="size-4" aria-hidden="true" />
                 Call
@@ -673,11 +693,24 @@ function Footer() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 items-center gap-3 py-5 text-xs font-bold text-white/60 sm:flex sm:justify-between">
+        <div className="grid gap-3 py-4 text-xs font-bold text-white/60 sm:grid-cols-2 sm:items-center">
           <p>© 2026 {clinic.name}</p>
-          <a href="#home" className="inline-flex items-center justify-end gap-2 text-[#FFD447] transition hover:text-white">
-            Back to top
-            <MoveRight className="size-4" aria-hidden="true" />
+          <a
+            href="https://www.blitzsolutions.online/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex max-w-full flex-wrap items-center gap-2 justify-self-start rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white/70 transition hover:border-[#FFD447]/40 hover:bg-white/10 hover:text-white sm:flex-nowrap sm:justify-self-end"
+          >
+            <span>Designed & developed by</span>
+            <span className="inline-flex min-h-8 items-center rounded-full bg-white px-3 shadow-sm">
+              <Image
+                src="/logo/blitz-logo-clean.png"
+                alt="Blitz Solutions"
+                width={82}
+                height={24}
+                className="h-5 w-auto"
+              />
+            </span>
           </a>
         </div>
       </div>
