@@ -71,8 +71,9 @@ export default function Home() {
       <main id="home" className="overflow-hidden">
         <HeroSection />
         <TrustStrip />
-        <CareHighlights />
         <TreatmentsSection />
+        <CareHighlights />
+        
         <DoctorSection />
         <RecoverySection />
         <TimingLocationSection />
@@ -110,13 +111,13 @@ function HeroSection() {
           <p className="mt-5 max-w-xl text-lg font-bold leading-7 text-white/90 sm:text-2xl sm:leading-9">
             Advanced physiotherapy care for pain relief, movement recovery, and local families in Dindigul.
           </p>
-          <div className="mt-7 grid max-w-2xl grid-cols-1 gap-3 text-sm font-bold text-white/90 sm:grid-cols-3">
+          <div className="mt-7 grid max-w-3xl grid-cols-3 gap-2 text-xs font-bold text-white/90 sm:gap-3 sm:text-sm">
             {clinic.timings.map((time) => (
-              <div key={time.label} className="flex min-h-14 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 backdrop-blur">
+              <div key={time.label} className="flex min-h-16 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-2 py-2 backdrop-blur sm:min-h-20 sm:px-3">
                 <Clock3 className="size-4 shrink-0 text-[#FFD447]" aria-hidden="true" />
-                <span>
+                <span className="min-w-0">
                   <span className="block text-white">{time.label}</span>
-                  <span className="text-white/80">{time.value}</span>
+                  <span className="block break-words text-white/80">{time.value}</span>
                 </span>
               </div>
             ))}
