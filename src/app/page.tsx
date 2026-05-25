@@ -452,7 +452,7 @@ function DoctorSection() {
               </div>
               <div className="rounded-lg bg-[#071E63] px-4 py-3 text-white">
                 <p className="text-xs font-black uppercase tracking-[0.12em] text-[#FFD447]">Experience</p>
-                <p className="mt-1 text-sm font-bold">Add years here when available</p>
+                <p className="mt-1 text-sm font-bold">10 +</p>
               </div>
             </div>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
