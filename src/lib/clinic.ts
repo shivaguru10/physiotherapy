@@ -4,10 +4,10 @@ export const clinic = {
   doctor: "Dr. X.sasikala jeyaceline",
   tamilDoctor: "Dr. X. சசிகலா ஜெயசிலின்",
   qualification: "B.P.T, MIAP",
-  phoneDisplay: "94454 39296",
-  phoneHref: "tel:+919445439296",
+  phoneDisplay: "94867 33238",
+  phoneHref: "tel:+919486733238",
   whatsappHref:
-    "https://wa.me/919445439296?text=Hi%2C%20I%20want%20to%20book%20a%20physiotherapy%20appointment.",
+    "https://wa.me/919486733238?text=Hi%2C%20I%20want%20to%20book%20a%20physiotherapy%20appointment.",
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=89%20East%20Govindapuram%20Dindigul%20624001%20Jeya%20Physiotherapy%20Clinic",
   mapsEmbedHref:
@@ -118,4 +118,27 @@ export const faqs = [
     question: "Is care available for paralysis or nerve weakness?",
     answer: "Yes. Neuro rehabilitation support is part of the clinic's listed services.",
   },
+];
+
+export const testimonials = [
+  {
+    author: "subusree subusree",
+    time: "a year ago",
+    text: "Excellent treatment. My sister had Knee joint pain. She can't sit on the floor. After getting wax treatment and excercises , pain relieved. She is become normal ."
+  },
+  {
+    author: "Sri Vaishnavi",
+    time: "a year ago",
+    text: "Nice experienced doctor. I took my father for treatment, doctor gave nice treatment and good positive words to recover soon. That positive words gave energy spirit and made my father to recoverd soon. Let god bless the doctor and her family members 🙏🙏."
+  },
+  {
+    author: "Vivekanandan Vivekanandan",
+    time: "10 months ago",
+    text: "I had an cervical pain, doctors are fixed surgery date, iam not ready for surgery,three months I put traction, now iam alright, she give an positive energy,during this time of treatment I wear collor,now iam alright."
+  },
+  {
+    author: "P Thiru Kumareshan",
+    time: "2 months ago",
+    text: "👍During the course of the procedure to my spouse by the physiotherapy doctor in Jeya Physiotherapy Clinic, Dindigul I noticed that doctor is very professional, courteous and patient friendly. The physiotherapist told that she has 19 years of experience in this field. She clearly explained us about the condition and the course of action. The IFT method - technique followed by simple exercise for a short duration with a confidence and hope on both sides for better result. This was supportive for a speedy recovery from sciatic pain without non invasive/surgery. There is a significant relief and improvement soon after 3 sessions itself as assured/predicted by her before commencement. The fees is affordable. The clinic is clean and safe as the doctor herself handles personally. The humble character, noble qualities with +ve attitude needs to be appreciated and right to be exposed in Google review. We would like to rate the clinic run by her and the service rendered by her in this way and the doctor deserves the credibility."
+  }
 ];

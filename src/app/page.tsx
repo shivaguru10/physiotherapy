@@ -37,6 +37,7 @@ import {
   faqs,
   recoverySteps,
   trustStats,
+  testimonials,
 } from "@/lib/clinic";
 
 const careHighlights = [
@@ -192,6 +193,7 @@ export default function Home() {
       <main id="home" className="overflow-hidden">
         <HeroSection />
         <TrustStrip />
+        <ClinicPhotosSection />
         <ConditionsTreatedSection />
         <TreatmentsSection />
         
@@ -199,6 +201,7 @@ export default function Home() {
         <DoctorSection />
         <RecoverySection />
         <TimingLocationSection />
+        <TestimonialsSection />
         <FaqSection />
       </main>
       <Footer />
@@ -209,41 +212,72 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[72svh] overflow-hidden bg-[#071E63]">
-      <Image
-        src="/images/hero-physiotherapy.png"
-        alt="Physiotherapist assisting a patient with shoulder mobility therapy"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[68%_center]"
-      />
-      <div className="absolute inset-0 bg-[#071E63]/45" />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,30,99,0.98)_0%,rgba(7,30,99,0.88)_42%,rgba(7,30,99,0.42)_74%,rgba(7,30,99,0.18)_100%)]" />
-      <div className="relative mx-auto flex min-h-[72svh] w-full max-w-7xl items-center px-4 py-12 sm:px-6 lg:px-8">
-        <div className="max-w-2xl text-white">
-          <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-lg bg-[#FFD447] px-3 py-2 text-xs font-black text-[#071E63] shadow-lg shadow-black/10 sm:text-sm">
-            <BadgeCheck className="size-4 shrink-0" aria-hidden="true" />
-            <span className="truncate">{clinic.doctor}, {clinic.qualification}</span>
-          </div>
-          <p className="text-lg font-black text-[#FFD447] sm:text-2xl">{clinic.tamilName}</p>
-          <h1 className="mt-2 max-w-[11ch] text-[2.35rem] font-black leading-none text-white sm:max-w-[12ch] sm:text-5xl lg:text-6xl">
-            {clinic.name}
-          </h1>
-          <p className="mt-5 max-w-xl text-lg font-bold leading-7 text-white/90 sm:text-2xl sm:leading-9">
-            Advanced physiotherapy care for pain relief, movement recovery, and local families in Dindigul.
-          </p>
-          <div className="mt-7 grid max-w-3xl grid-cols-3 gap-2 text-xs font-bold text-white/90 sm:gap-3 sm:text-sm">
-            {clinic.timings.map((time) => (
-              <div key={time.label} className="flex min-h-16 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-2 py-2 backdrop-blur sm:min-h-20 sm:px-3">
-                <Clock3 className="size-4 shrink-0 text-[#FFD447]" aria-hidden="true" />
-                <span className="min-w-0">
-                  <span className="block text-white">{time.label}</span>
-                  <span className="block break-words text-white/80">{time.value}</span>
-                </span>
+    <section className="relative overflow-hidden bg-[#071E63]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-blue-700/40 via-[#071E63] to-[#071E63]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-center lg:min-h-[72svh]">
+          
+          <div className="pt-12 pb-8 text-white lg:py-20 lg:pr-8">
+            <div className="flex justify-between relative">
+              {/* Text Content - Constrained width on mobile to allow image on right */}
+              <div className="relative z-20 w-[62%] sm:w-[70%] lg:w-full">
+                <div className="mb-4 inline-flex max-w-full items-center gap-2 rounded-lg bg-[#FFD447] px-2.5 py-1.5 text-[10px] sm:text-xs font-black text-[#071E63] shadow-lg shadow-black/10">
+                  <BadgeCheck className="size-3.5 shrink-0" aria-hidden="true" />
+                  <span className="truncate">{clinic.doctor}, {clinic.qualification}</span>
+                </div>
+                <p className="text-base font-black text-[#FFD447] sm:text-2xl">{clinic.tamilName}</p>
+                <h1 className="mt-1 text-[2rem] font-black leading-tight text-white sm:text-5xl lg:text-6xl">
+                  {clinic.name}
+                </h1>
+                <p className="mt-4 text-sm font-bold leading-6 text-white/90 sm:text-lg lg:text-2xl lg:leading-9">
+                  Advanced physiotherapy care for pain relief, movement recovery, and local families in Dindigul.
+                </p>
               </div>
-            ))}
+
+              {/* Mobile Image - Positioned beside the text */}
+              <div className="absolute right-[-1rem] top-0 bottom-[-2rem] w-[50%] z-10 lg:hidden pointer-events-none opacity-95">
+                <Image
+                  src="/hero-doctor-v3.png"
+                  alt="Physiotherapy treatment for back pain"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 50vw, 100vw"
+                  className="object-contain object-right-top drop-shadow-2xl"
+                />
+                <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#071E63] to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#071E63] to-transparent" />
+              </div>
+            </div>
+
+            {/* Timing Cards */}
+            <div className="mt-8 grid max-w-3xl grid-cols-1 gap-3 text-xs font-bold text-white/90 sm:grid-cols-3 sm:gap-4 sm:text-sm relative z-20">
+              {clinic.timings.map((time) => (
+                <div key={time.label} className="flex min-h-16 items-center gap-3 rounded-lg border border-white/20 bg-white/10 px-4 py-3 backdrop-blur sm:px-3">
+                  <Clock3 className="size-5 shrink-0 text-[#FFD447]" aria-hidden="true" />
+                  <span className="min-w-0">
+                    <span className="block text-white">{time.label}</span>
+                    <span className="block break-words text-white/80">{time.value}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
+
+          {/* Desktop Image */}
+          <div className="hidden lg:flex relative justify-end h-full min-h-[500px]">
+            <div className="relative h-full w-full max-w-none self-end">
+              <Image
+                src="/hero-doctor-v3.png"
+                alt="Physiotherapy treatment for back pain"
+                fill
+                priority
+                sizes="50vw"
+                className="object-contain object-right-bottom drop-shadow-2xl"
+              />
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -358,6 +392,70 @@ function TreatmentsSection() {
   );
 }
 
+function ClinicPhotosSection() {
+  const photos = [
+    "/images/clinic-photo-1.png",
+    "/images/clinic-photo-2.png",
+    "/images/clinic-photo-3.png",
+    "/images/clinic-photo-4.png",
+    "/images/clinic-photo-5.png",
+    "/images/clinic-photo-6.png",
+  ];
+
+  return (
+    <section id="clinic-photos" className="bg-white py-14 sm:py-20 overflow-hidden">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Facilities"
+          title="Inside our clinic"
+          tamil="எங்கள் கிளினிக்"
+          align="center"
+        />
+        
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes scroll-marquee-photos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee-track-photos {
+            animation: scroll-marquee-photos 40s linear infinite;
+          }
+          .marquee-track-photos:hover {
+            animation-play-state: paused;
+          }
+        `}} />
+        <div className="relative mt-10 w-full overflow-hidden flex items-center py-4">
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 sm:w-32 bg-gradient-to-r from-white to-transparent"></div>
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 sm:w-32 bg-gradient-to-l from-white to-transparent"></div>
+          
+          <div className="flex w-max marquee-track-photos">
+            <div className="flex gap-4 sm:gap-6 pr-4 sm:pr-6">
+              {photos.map((src, idx) => (
+                <div 
+                  key={`p1-${idx}`} 
+                  className="w-[280px] sm:w-[400px] aspect-[4/3] relative shrink-0 rounded-lg overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100"
+                >
+                  <Image src={src} alt="Jeya Physiotherapy Clinic Facility" fill sizes="(max-width: 640px) 280px, 400px" className="object-cover" />
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-4 sm:gap-6 pr-4 sm:pr-6" aria-hidden="true">
+              {photos.map((src, idx) => (
+                <div 
+                  key={`p2-${idx}`} 
+                  className="w-[280px] sm:w-[400px] aspect-[4/3] relative shrink-0 rounded-lg overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100"
+                >
+                  <Image src={src} alt="Jeya Physiotherapy Clinic Facility" fill sizes="(max-width: 640px) 280px, 400px" className="object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ConditionsTreatedSection() {
   return (
     <section id="conditions" className="bg-white py-14 sm:py-20">
@@ -406,6 +504,21 @@ function ConditionsTreatedSection() {
               ))}
             </div>
           </div>
+          
+          <div className="mt-8 border-t border-[#071E63]/10 pt-8">
+            <div className="text-center sm:text-left">
+              <p className="text-sm font-black uppercase tracking-[0.12em] text-[#E51B23]">Original Referrals</p>
+              <h4 className="mt-2 text-xl font-black text-[#071E63]">Clinic Flyers</h4>
+            </div>
+            <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:gap-8">
+              <div className="relative w-full h-[500px] sm:h-[650px] overflow-hidden rounded-lg border-4 border-white shadow-lg bg-white">
+                <Image src="/images/clinic-flyer-1.jpeg" alt="Jeya Physiotherapy Clinic Flyer 1" fill className="object-contain" />
+              </div>
+              <div className="relative w-full h-[500px] sm:h-[650px] overflow-hidden rounded-lg border-4 border-white shadow-lg bg-white">
+                <Image src="/images/clinic-flyer-2.jpeg" alt="Jeya Physiotherapy Clinic Flyer 2" fill className="object-contain" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -418,18 +531,19 @@ function DoctorSection() {
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
         <div className="relative min-h-[380px] overflow-hidden rounded-lg bg-[#071E63] shadow-2xl shadow-[#071E63]/15 sm:min-h-[520px]">
           <Image
-            src="/images/therapy-elderly-mobility.png"
-            alt="Physiotherapist supporting elderly mobility and recovery"
+            src="/images/doctor-portrait-v2.png"
+            alt={`Portrait of ${clinic.doctor} at her desk`}
             fill
             sizes="(min-width: 1024px) 45vw, 100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,30,99,0.04)_0%,rgba(7,30,99,0.15)_38%,rgba(7,30,99,0.92)_100%)]" />
+
           <div className="absolute left-4 top-4 rounded-lg bg-white/92 px-4 py-3 text-[#071E63] shadow-lg shadow-black/10 backdrop-blur">
             <p className="text-xs font-black uppercase tracking-[0.12em] text-[#E51B23]">Doctor trust</p>
             <p className="mt-1 text-lg font-black">{clinic.qualification}</p>
           </div>
-          <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7">
+          <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7 z-20">
             <p className="text-sm font-extrabold text-[#FFD447]">Patient-first physiotherapy care</p>
             <p className="mt-2 text-2xl font-black leading-tight">
               Practical treatment for pain, balance, weakness, and movement recovery
@@ -588,6 +702,90 @@ function TimingLocationSection() {
                   Call Clinic
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  return (
+    <section id="testimonials" className="bg-[#071E63] py-14 sm:py-20 text-white overflow-hidden">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Reviews"
+          title="What our patients say"
+          tamil=""
+          align="center"
+          tone="dark"
+        />
+        
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes scroll-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .marquee-track {
+            animation: scroll-marquee 40s linear infinite;
+          }
+          .marquee-track:hover {
+            animation-play-state: paused;
+          }
+        `}} />
+        <div className="relative mt-10 w-full overflow-hidden flex items-center">
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 sm:w-32 bg-gradient-to-r from-[#071E63] to-transparent"></div>
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 sm:w-32 bg-gradient-to-l from-[#071E63] to-transparent"></div>
+          
+          <div className="flex w-max marquee-track">
+            {/* First Set */}
+            <div className="flex gap-4 sm:gap-6 pr-4 sm:pr-6">
+              {testimonials.map((testimonial, idx) => (
+                <div 
+                  key={`t1-${idx}`} 
+                  className="w-[300px] sm:w-[400px] flex flex-col justify-between shrink-0 rounded-lg bg-white/10 p-6 border border-white/20 backdrop-blur"
+                >
+                  <div>
+                    <div className="flex text-[#FFD447] mb-4 gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+                          <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-white/90 text-sm sm:text-base italic leading-relaxed line-clamp-6">"{testimonial.text}"</p>
+                  </div>
+                  <div className="mt-6 border-t border-white/20 pt-4">
+                    <p className="font-bold text-white truncate">{testimonial.author}</p>
+                    <p className="text-sm text-white/60">{testimonial.time}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Duplicated Set for Seamless Loop */}
+            <div className="flex gap-4 sm:gap-6 pr-4 sm:pr-6" aria-hidden="true">
+              {testimonials.map((testimonial, idx) => (
+                <div 
+                  key={`t2-${idx}`} 
+                  className="w-[300px] sm:w-[400px] flex flex-col justify-between shrink-0 rounded-lg bg-white/10 p-6 border border-white/20 backdrop-blur"
+                >
+                  <div>
+                    <div className="flex text-[#FFD447] mb-4 gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" aria-hidden="true">
+                          <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
+                        </svg>
+                      ))}
+                    </div>
+                    <p className="text-white/90 text-sm sm:text-base italic leading-relaxed line-clamp-6">"{testimonial.text}"</p>
+                  </div>
+                  <div className="mt-6 border-t border-white/20 pt-4">
+                    <p className="font-bold text-white truncate">{testimonial.author}</p>
+                    <p className="text-sm text-white/60">{testimonial.time}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
