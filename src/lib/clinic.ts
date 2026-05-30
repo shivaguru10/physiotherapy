@@ -1,5 +1,5 @@
 export const clinic = {
-  name: "Jeya Physiotherapy Clinic",
+  name: "Jeya Physiotherapy Clinic ",
   tamilName: "ஜெயா பிசியோ கிளினிக்",
   doctor: "Dr. X.sasikala jeyaceline",
   tamilDoctor: "Dr. X. சசிகலா ஜெயசிலின்",
@@ -140,5 +140,20 @@ export const testimonials = [
     author: "P Thiru Kumareshan",
     time: "2 months ago",
     text: "👍During the course of the procedure to my spouse by the physiotherapy doctor in Jeya Physiotherapy Clinic, Dindigul I noticed that doctor is very professional, courteous and patient friendly. The physiotherapist told that she has 19 years of experience in this field. She clearly explained us about the condition and the course of action. The IFT method - technique followed by simple exercise for a short duration with a confidence and hope on both sides for better result. This was supportive for a speedy recovery from sciatic pain without non invasive/surgery. There is a significant relief and improvement soon after 3 sessions itself as assured/predicted by her before commencement. The fees is affordable. The clinic is clean and safe as the doctor herself handles personally. The humble character, noble qualities with +ve attitude needs to be appreciated and right to be exposed in Google review. We would like to rate the clinic run by her and the service rendered by her in this way and the doctor deserves the credibility."
+  },
+  {
+    author: "arul antonyraj",
+    time: "a year ago",
+    text: "Excellent physiotherapy treatment! I found great relief for both joint pain and severe neck pain. Highly recommended."
+  },
+  {
+    author: "Niktha Infant",
+    time: "2 months ago",
+    text: "I visited Jeya Physio Clinic for treatment. The doctor is a very genuine person who provides friendly and patient care. The clinic is incredibly neat and tidy. I experienced a very speedy recovery!"
+  },
+  {
+    author: "Yasmine Bruna",
+    time: "2 months ago",
+    text: "I had severe back pain for 9 days—I couldn't sit or even lie down. I took IFT and traction therapy for one week, and now I am 100% alright! The doctor also advised on proper exercises and positioning to prevent future issues."
   }
 ];

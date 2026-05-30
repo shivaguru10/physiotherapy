@@ -166,7 +166,7 @@ const doctorTrust = [
   { icon: Certificate, label: "Qualification", value: clinic.qualification },
   { icon: HandHeart, label: "Care style", value: "Patient-first physiotherapy care" },
   { icon: Heartbeat, label: "Focus", value: "Pain relief and movement recovery" },
-  { icon: UserFocus, label: "Experience", value: "Clinical experience details can be added" },
+  { icon: UserFocus, label: "Experience", value: "19+ years of clinical experience" },
 ];
 
 const footerQuickLinks = [
@@ -192,13 +192,13 @@ export default function Home() {
       <SiteHeader />
       <main id="home" className="overflow-hidden">
         <HeroSection />
-        <TrustStrip />
+        <TrustStrip /><DoctorSection />
         <ClinicPhotosSection />
         <ConditionsTreatedSection />
         <TreatmentsSection />
         
         <CareHighlights />
-        <DoctorSection />
+        
         <RecoverySection />
         <TimingLocationSection />
         <TestimonialsSection />
@@ -251,13 +251,13 @@ function HeroSection() {
             </div>
 
             {/* Timing Cards */}
-            <div className="mt-8 grid max-w-3xl grid-cols-1 gap-3 text-xs font-bold text-white/90 sm:grid-cols-3 sm:gap-4 sm:text-sm relative z-20">
+            <div className="mt-8 grid max-w-3xl grid-cols-3 gap-2 text-[11px] font-bold text-white/90 sm:gap-4 sm:text-sm relative z-20">
               {clinic.timings.map((time) => (
-                <div key={time.label} className="flex min-h-16 items-center gap-3 rounded-lg border border-white/20 bg-white/10 px-4 py-3 backdrop-blur sm:px-3">
-                  <Clock3 className="size-5 shrink-0 text-[#FFD447]" aria-hidden="true" />
+                <div key={time.label} className="flex flex-col sm:flex-row items-center sm:items-start justify-center gap-1.5 sm:gap-3 rounded-lg border border-white/20 bg-white/10 px-2 py-2.5 sm:px-4 sm:py-3 backdrop-blur text-center sm:text-left">
+                  <Clock3 className="size-4 sm:size-5 shrink-0 text-[#FFD447]" aria-hidden="true" />
                   <span className="min-w-0">
-                    <span className="block text-white">{time.label}</span>
-                    <span className="block break-words text-white/80">{time.value}</span>
+                    <span className="block text-white leading-tight">{time.label}</span>
+                    <span className="block break-words text-white/80 text-[9px] sm:text-xs leading-tight mt-0.5 sm:mt-0">{time.value}</span>
                   </span>
                 </div>
               ))}
@@ -306,9 +306,9 @@ function CareHighlights() {
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Visual trust"
-          title="A clinic page local people can trust at a glance"
+          title="A clinic page , people can trust at a glance"
           tamil="ஒரே பார்வையில் நம்பிக்கை தரும் தகவல்கள்"
-          text="Big contact actions, real treatment visuals, Tamil support, timing, and location are kept clear for mobile users."
+         
           align="center"
         />
         <div className="mt-10 grid grid-cols-2 gap-3 lg:grid-cols-4">
@@ -319,7 +319,7 @@ function CareHighlights() {
               </div>
               <h3 className="mt-3 text-sm font-black leading-tight text-[#071E63] sm:mt-4 sm:text-lg">{item.title}</h3>
               <p className="mt-1 text-xs font-extrabold leading-tight text-[#E51B23] sm:text-sm">{item.tamil}</p>
-              <p className="mt-2 text-xs leading-5 text-slate-700 sm:mt-3 sm:text-sm sm:leading-6">{item.text}</p>
+              
             </div>
           ))}
         </div>
@@ -379,7 +379,7 @@ function TreatmentsSection() {
             </article>
           ))}
         </div>
-        <div className="mt-6 grid gap-px overflow-hidden rounded-lg bg-[#071E63]/15 sm:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-px overflow-hidden rounded-lg bg-[#071E63]/15 sm:grid-cols-4">
           {treatmentCounters.map((counter) => (
             <div key={counter.label} className="bg-white px-4 py-5 text-center">
               <p className="text-3xl font-black leading-none text-[#E51B23]">{counter.value}</p>
@@ -473,25 +473,25 @@ function ConditionsTreatedSection() {
             </p>
           </div>
           <div className="mt-6 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="grid gap-3 sm:grid-cols-2">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3">
               {premiumConditions.map((condition) => (
                 <article
                   key={condition.title}
-                  className="group rounded-lg border border-[#071E63]/10 bg-[#FFFDF6] p-4 transition hover:-translate-y-1 hover:border-[#0F9F9A]/35 hover:bg-white hover:shadow-xl hover:shadow-[#071E63]/10"
+                  className="group rounded-lg border border-[#071E63]/10 bg-[#FFFDF6] p-3 sm:p-4 transition hover:-translate-y-1 hover:border-[#0F9F9A]/35 hover:bg-white hover:shadow-xl hover:shadow-[#071E63]/10"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-[#EAF8F7] text-[#0F7F7B] ring-1 ring-[#0F9F9A]/15 transition group-hover:bg-[#071E63] group-hover:text-[#FFD447]">
-                      <condition.icon className="size-6" weight="duotone" aria-hidden="true" />
+                  <div className="flex flex-col sm:flex-row items-start gap-2.5 sm:gap-4">
+                    <div className="flex size-9 sm:size-11 shrink-0 items-center justify-center rounded-lg bg-[#EAF8F7] text-[#0F7F7B] ring-1 ring-[#0F9F9A]/15 transition group-hover:bg-[#071E63] group-hover:text-[#FFD447]">
+                      <condition.icon className="size-5 sm:size-6" weight="duotone" aria-hidden="true" />
                     </div>
                     <div>
-                      <h4 className="text-base font-black text-[#071E63]">{condition.title}</h4>
-                      <p className="mt-1 text-xs font-semibold leading-5 text-slate-700">{condition.text}</p>
+                      <h4 className="text-[13px] sm:text-base font-black leading-tight text-[#071E63]">{condition.title}</h4>
+                      <p className="mt-1 text-[11px] sm:text-xs font-semibold leading-relaxed sm:leading-5 text-slate-700">{condition.text}</p>
                     </div>
                   </div>
                 </article>
               ))}
             </div>
-            <div className="grid gap-3 rounded-lg bg-[#071E63] p-4 text-white sm:grid-cols-2">
+            <div className="grid grid-cols-2 gap-3 rounded-lg bg-[#071E63] p-4 sm:p-5 text-white sm:gap-4">
               {flyerConditionGroups.map((group, groupIndex) => (
                 <ul key={groupIndex} className="space-y-2">
                   {group.map((item) => (
@@ -510,12 +510,12 @@ function ConditionsTreatedSection() {
               <p className="text-sm font-black uppercase tracking-[0.12em] text-[#E51B23]">Original Referrals</p>
               <h4 className="mt-2 text-xl font-black text-[#071E63]">Clinic Flyers</h4>
             </div>
-            <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:gap-8">
-              <div className="relative w-full h-[500px] sm:h-[650px] overflow-hidden rounded-lg border-4 border-white shadow-lg bg-white">
-                <Image src="/images/clinic-flyer-1.jpeg" alt="Jeya Physiotherapy Clinic Flyer 1" fill className="object-contain" />
+            <div className="mt-5 grid gap-0 sm:gap-5 sm:grid-cols-2 lg:gap-8 bg-white sm:bg-transparent rounded-lg sm:rounded-none overflow-hidden sm:overflow-visible shadow-lg sm:shadow-none border-4 border-white sm:border-0">
+              <div className="relative w-full sm:rounded-lg sm:border-4 sm:border-white sm:shadow-lg overflow-hidden border-b-2 sm:border-b-0 border-slate-100 flex">
+                <Image src="/images/clinic-flyer-1.jpeg" alt="Jeya Physiotherapy Clinic Flyer 1" width={1000} height={1500} className="w-full h-auto object-cover" />
               </div>
-              <div className="relative w-full h-[500px] sm:h-[650px] overflow-hidden rounded-lg border-4 border-white shadow-lg bg-white">
-                <Image src="/images/clinic-flyer-2.jpeg" alt="Jeya Physiotherapy Clinic Flyer 2" fill className="object-contain" />
+              <div className="relative w-full sm:rounded-lg sm:border-4 sm:border-white sm:shadow-lg overflow-hidden flex">
+                <Image src="/images/clinic-flyer-2.jpeg" alt="Jeya Physiotherapy Clinic Flyer 2" width={1000} height={1500} className="w-full h-auto object-cover" />
               </div>
             </div>
           </div>
@@ -531,7 +531,7 @@ function DoctorSection() {
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
         <div className="relative min-h-[380px] overflow-hidden rounded-lg bg-[#071E63] shadow-2xl shadow-[#071E63]/15 sm:min-h-[520px]">
           <Image
-            src="/images/doctor-portrait-v2.png"
+            src="/doctor_v2.png"
             alt={`Portrait of ${clinic.doctor} at her desk`}
             fill
             sizes="(min-width: 1024px) 45vw, 100vw"
@@ -543,11 +543,18 @@ function DoctorSection() {
             <p className="text-xs font-black uppercase tracking-[0.12em] text-[#E51B23]">Doctor trust</p>
             <p className="mt-1 text-lg font-black">{clinic.qualification}</p>
           </div>
+          
+          <div className="absolute right-4 top-4 flex items-center gap-2.5 rounded-full bg-white/92 pl-1.5 pr-4 py-1.5 shadow-lg shadow-black/10 backdrop-blur">
+            <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#FFD447] text-[#071E63] font-black text-xs">
+              19+
+            </div>
+            <p className="text-[10px] font-black leading-[1.1] tracking-widest text-[#071E63] uppercase">
+              Years<br />Experience
+            </p>
+          </div>
           <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7 z-20">
             <p className="text-sm font-extrabold text-[#FFD447]">Patient-first physiotherapy care</p>
-            <p className="mt-2 text-2xl font-black leading-tight">
-              Practical treatment for pain, balance, weakness, and movement recovery
-            </p>
+           
           </div>
         </div>
         <div>
@@ -569,36 +576,34 @@ function DoctorSection() {
                 <p className="mt-1 text-sm font-bold">19 + years</p>
               </div>
             </div>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="mt-5 grid grid-cols-2 gap-2 sm:gap-3">
               {doctorTrust.map((item) => (
-                <div key={item.label} className="flex min-h-20 items-center gap-3 rounded-lg border border-[#071E63]/10 bg-white p-4">
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-[#FFF3BE] text-[#071E63] ring-1 ring-[#071E63]/10">
-                    <item.icon className="size-5" weight="duotone" aria-hidden="true" />
+                <div key={item.label} className="flex min-h-[5.5rem] sm:min-h-20 flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 rounded-lg border border-[#071E63]/10 bg-white p-3 sm:p-4">
+                  <div className="flex size-9 sm:size-11 shrink-0 items-center justify-center rounded-lg bg-[#FFF3BE] text-[#071E63] ring-1 ring-[#071E63]/10">
+                    <item.icon className="size-4 sm:size-5" weight="duotone" aria-hidden="true" />
                   </div>
                   <div>
-                    <p className="text-xs font-black uppercase tracking-[0.08em] text-[#E51B23]">{item.label}</p>
-                    <p className="mt-1 text-sm font-black leading-5 text-[#071E63]">{item.value}</p>
+                    <p className="text-[9px] sm:text-xs font-black uppercase tracking-[0.08em] text-[#E51B23]">{item.label}</p>
+                    <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm font-black leading-snug sm:leading-5 text-[#071E63]">{item.value}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <div className="mt-5 grid grid-cols-2 gap-2 sm:gap-3">
             {clinicFeatures.map((feature) => (
-              <div key={feature.label} className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-white p-4">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-[#071E63]/10 bg-[#F7FAFF] text-[#071E63]">
-                  <feature.icon className="size-5 stroke-[1.8]" aria-hidden="true" />
+              <div key={feature.label} className="flex min-h-[4rem] sm:min-h-16 flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 rounded-lg border border-slate-200 bg-white p-3 sm:p-4">
+                <div className="flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg border border-[#071E63]/10 bg-[#F7FAFF] text-[#071E63]">
+                  <feature.icon className="size-4 sm:size-5 stroke-[1.8]" aria-hidden="true" />
                 </div>
-                <p className="text-sm font-black text-[#071E63]">{feature.label}</p>
+                <p className="text-[11px] sm:text-sm font-black leading-snug text-[#071E63]">{feature.label}</p>
               </div>
             ))}
           </div>
           <div className="mt-5 rounded-lg bg-[#FFD447] p-5 text-[#071E63]">
             <p className="text-sm font-black uppercase">Call before visit</p>
             <p className="mt-2 text-2xl font-black">{clinic.phoneDisplay}</p>
-            <p className="mt-2 text-sm font-bold">
-              Morning and evening consultation slots are shown clearly for mobile users.
-            </p>
+            
           </div>
         </div>
       </div>
@@ -617,15 +622,15 @@ function RecoverySection() {
           text="The page explains the care process with quick visuals and short labels so people understand what happens before they call."
           tone="dark"
         />
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <div className="mt-6 sm:mt-10 grid gap-3 sm:gap-4 md:grid-cols-3">
           {recoverySteps.map((step, index) => (
-            <div key={step.title} className="rounded-lg border border-white/20 bg-white/[0.08] p-6">
-              <div className="flex size-12 items-center justify-center rounded-lg bg-[#FFD447] text-xl font-black text-[#071E63]">
+            <div key={step.title} className="rounded-lg border border-white/20 bg-white/[0.08] p-4 sm:p-6">
+              <div className="flex size-10 sm:size-12 items-center justify-center rounded-lg bg-[#FFD447] text-lg sm:text-xl font-black text-[#071E63]">
                 {index + 1}
               </div>
-              <h3 className="mt-5 text-2xl font-black text-white">{step.title}</h3>
-              <p className="mt-1 text-base font-extrabold text-[#FFD447]">{step.tamil}</p>
-              <p className="mt-4 leading-7 text-white/80">{step.text}</p>
+              <h3 className="mt-3 sm:mt-5 text-xl sm:text-2xl font-black text-white">{step.title}</h3>
+              <p className="mt-1 text-sm sm:text-base font-extrabold text-[#FFD447]">{step.tamil}</p>
+              <p className="mt-2 sm:mt-4 text-sm sm:text-base leading-snug sm:leading-7 text-white/80">{step.text}</p>
             </div>
           ))}
         </div>
@@ -804,17 +809,24 @@ function FaqSection() {
           tamil="அழைக்கும் முன் தெரிந்துகொள்ள"
           align="center"
         />
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 sm:mt-12 mx-auto max-w-3xl flex flex-col gap-3 sm:gap-4">
           {faqs.map((faq) => (
-            <div key={faq.question} className="rounded-lg bg-white p-5 shadow-sm">
-              <div className="flex gap-3">
-                <ClipboardCheck className="mt-1 size-5 shrink-0 text-[#0F9F9A]" aria-hidden="true" />
-                <div>
-                  <h3 className="text-lg font-black text-[#071E63]">{faq.question}</h3>
-                  <p className="mt-2 leading-7 text-slate-700">{faq.answer}</p>
+            <details key={faq.question} className="group rounded-lg bg-white shadow-sm border border-[#071E63]/5 [&_summary::-webkit-details-marker]:hidden open:shadow-md transition-shadow">
+              <summary className="flex cursor-pointer items-center justify-between gap-4 p-5 outline-none list-none">
+                <div className="flex gap-3 items-center">
+                  <ClipboardCheck className="size-5 shrink-0 text-[#0F9F9A]" aria-hidden="true" />
+                  <h3 className="text-base sm:text-lg font-black text-[#071E63] select-none">{faq.question}</h3>
                 </div>
+                <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#FFF7D6] text-[#071E63] transition-transform duration-300 group-open:-rotate-180">
+                  <svg fill="none" height="20" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24" width="20">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </div>
+              </summary>
+              <div className="px-5 pb-5 pl-13 sm:pl-[3.25rem] -mt-1 overflow-hidden">
+                <p className="leading-relaxed text-sm sm:text-base font-semibold text-slate-700 border-t border-slate-100 pt-3">{faq.answer}</p>
               </div>
-            </div>
+            </details>
           ))}
         </div>
       </div>
