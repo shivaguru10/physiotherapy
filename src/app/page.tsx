@@ -158,7 +158,7 @@ const flyerConditionGroups = [
     "முகவாதம்",
     "கை, கால் செயலிழப்பு",
     "தண்டுவட பாதிப்பு",
-    "பிறவிக்குறைபாடு",
+    ,
   ],
 ];
 
@@ -866,13 +866,13 @@ function FaqSection() {
 function Footer() {
   return (
     <footer className="relative bg-[#071E63] pb-32 pt-10 text-white sm:pb-10">
-      <div className="pointer-events-none sticky bottom-44 z-20 mx-auto h-0 w-full max-w-7xl px-4 sm:bottom-36 sm:px-6 lg:px-8">
+      <div className="absolute -top-6 right-4 z-20 sm:right-6 lg:right-8">
         <a
           href="#home"
-          className="pointer-events-auto ml-auto flex size-12 items-center justify-center rounded-full bg-[#FFD447] text-[#071E63] shadow-xl shadow-yellow-950/20 ring-4 ring-white/90 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFD447] sm:size-14"
+          className="flex size-10 items-center justify-center rounded-full bg-[#FFD447] text-[#071E63] shadow-xl shadow-yellow-950/20 ring-4 ring-white/90 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFD447] sm:size-12"
           aria-label="Back to top"
         >
-          <ArrowUp className="size-6" strokeWidth={3} aria-hidden="true" />
+          <ArrowUp className="size-5 sm:size-6" strokeWidth={3} aria-hidden="true" />
         </a>
       </div>
       <div className="mx-auto w-full max-w-7xl px-4 pr-20 sm:px-6 lg:px-8">
