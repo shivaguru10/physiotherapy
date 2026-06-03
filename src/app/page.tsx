@@ -110,23 +110,23 @@ const premiumConditions = [
 const treatmentShowcases = [
   {
     image: "/images/therapy-elderly-mobility.png",
-    title: "Elderly mobility and balance care",
-    tamil: "முதியோர் இயக்கம் மற்றும் சமநிலை பராமரிப்பு",
-    text: "Guided support for walking confidence, balance, weakness, and safer daily movement.",
+    title: "Elderly mobility",
+    tamil: "முதியோர் இயக்கம்",
+    text: "Support for walking confidence, balance & weakness.",
     points: ["Balance training", "Weakness recovery", "Safe movement practice"],
   },
   {
     image: "/images/therapy-back-pain.png",
-    title: "Back, neck and posture therapy",
-    tamil: "முதுகு, கழுத்து மற்றும் உடல் நிலை சிகிச்சை",
-    text: "Focused assessment and treatment for pain caused by posture, stiffness, and spine stress.",
+    title: "Back & neck therapy",
+    tamil: "முதுகு, கழுத்து சிகிச்சை",
+    text: "Treatment for pain caused by posture & stiffness.",
     points: ["Neck pain", "Back pain", "Posture correction"],
   },
   {
     image: "/images/therapy-neuro-rehab.png",
-    title: "Neuro and family rehabilitation",
-    tamil: "நரம்பு மற்றும் குடும்ப மீட்பு சிகிச்சை",
-    text: "Patient-friendly rehabilitation for paralysis, hand or leg weakness, and long-term recovery needs.",
+    title: "Neuro rehabilitation",
+    tamil: "நரம்பு மீட்பு சிகிச்சை",
+    text: "Rehabilitation for paralysis & hand/leg weakness.",
     points: ["Paralysis rehab", "Hand and leg weakness", "Functional recovery"],
   },
 ];
@@ -190,9 +190,32 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
+      {/* Hidden NAP microdata for local SEO — crawlable, not visible */}
+      <div
+        itemScope
+        itemType="https://schema.org/LocalBusiness"
+        className="sr-only"
+        aria-hidden="true"
+      >
+        <span itemProp="name">Jeya Physiotherapy Clinic</span>
+        <span itemProp="telephone">+91-94867-33238</span>
+        <address itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+          <span itemProp="streetAddress">89, East Govindapuram</span>,
+          <span itemProp="addressLocality">Dindigul</span>,
+          <span itemProp="addressRegion">Tamil Nadu</span>
+          <span itemProp="postalCode">624001</span>,
+          <span itemProp="addressCountry">India</span>
+        </address>
+        <span itemProp="openingHours" content="Mo-Sa 10:30-13:00">Monday to Saturday: 10:30 AM to 1:00 PM</span>
+        <span itemProp="openingHours" content="Mo-Sa 17:00-20:00">Monday to Saturday: 5:00 PM to 8:00 PM</span>
+        <link itemProp="url" href="https://jeyaphysiotherapyclinicdgl.com" />
+        <meta itemProp="priceRange" content="affordable" />
+      </div>
       <main id="home" className="overflow-hidden">
         <HeroSection />
-        <TrustStrip /><DoctorSection />
+        <TrustStrip />
+        <AboutClinicSection />
+        <DoctorSection />
         <ClinicPhotosSection />
         <ConditionsTreatedSection />
         <TreatmentsSection />
@@ -231,7 +254,7 @@ function HeroSection() {
                   {clinic.name}
                 </h1>
                 <p className="mt-4 text-sm font-bold leading-6 text-white/90 sm:text-lg lg:text-2xl lg:leading-9">
-                  Advanced physiotherapy care for pain relief, movement recovery, and local families in Dindigul.
+                  Expert physiotherapy care in Dindigul for back pain, knee pain, paralysis rehab &amp; elderly mobility.
                 </p>
               </div>
 
@@ -239,7 +262,7 @@ function HeroSection() {
               <div className="absolute right-[-1rem] top-0 bottom-[-2rem] w-[50%] z-10 lg:hidden pointer-events-none opacity-95">
                 <Image
                   src="/hero-doctor-v3.png"
-                  alt="Physiotherapy treatment for back pain"
+                  alt="Dr. X. Sasikala Jeyaceline, physiotherapist at Jeya Physiotherapy Clinic, Dindigul"
                   fill
                   priority
                   sizes="(max-width: 1024px) 50vw, 100vw"
@@ -302,7 +325,7 @@ function TrustStrip() {
 
 function CareHighlights() {
   return (
-    <section className="bg-white py-14 sm:py-20">
+    <section className="bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Visual trust"
@@ -330,7 +353,7 @@ function CareHighlights() {
 
 function TreatmentsSection() {
   return (
-    <section id="treatments" className="bg-[#FFF7D6] py-14 sm:py-20">
+    <section id="treatments" className="bg-[#FFF7D6] py-10 sm:py-14">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Treatments"
@@ -366,12 +389,12 @@ function TreatmentsSection() {
                   <p className="mt-3 max-w-2xl text-sm font-semibold leading-6 text-white/85">{care.text}</p>
                 </div>
               </div>
-              <div className="p-5">
-                <ul className="grid gap-2 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <div className="py-4 sm:p-5">
+                <ul className="flex overflow-x-auto gap-2 sm:grid sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 px-4 sm:px-0 pb-1 sm:pb-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden after:content-[''] after:w-4 after:shrink-0 sm:after:hidden">
                   {care.points.map((point) => (
-                    <li key={point} className="flex min-h-11 items-center gap-2 rounded-lg bg-[#F7FAFF] px-3 py-2 text-sm font-black text-[#071E63]">
-                      <CheckCircle2 className="size-4 shrink-0 text-[#0F9F9A]" aria-hidden="true" />
-                      {point}
+                    <li key={point} className="flex shrink-0 min-h-9 sm:min-h-11 items-center gap-1.5 sm:gap-2 rounded-lg bg-[#F7FAFF] px-3 py-2 text-xs sm:text-sm font-black text-[#071E63]">
+                      <CheckCircle2 className="size-3.5 sm:size-4 shrink-0 text-[#0F9F9A]" aria-hidden="true" />
+                      <span className="whitespace-nowrap sm:whitespace-normal">{point}</span>
                     </li>
                   ))}
                 </ul>
@@ -403,7 +426,7 @@ function ClinicPhotosSection() {
   ];
 
   return (
-    <section id="clinic-photos" className="bg-white py-14 sm:py-20 overflow-hidden">
+    <section id="clinic-photos" className="bg-white py-10 sm:py-14 overflow-hidden">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Facilities"
@@ -458,7 +481,7 @@ function ClinicPhotosSection() {
 
 function ConditionsTreatedSection() {
   return (
-    <section id="conditions" className="bg-white py-14 sm:py-20">
+    <section id="conditions" className="bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-lg bg-[#FFF7D6] p-5 shadow-xl shadow-[#071E63]/10 sm:p-7">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -527,7 +550,7 @@ function ConditionsTreatedSection() {
 
 function DoctorSection() {
   return (
-    <section id="doctor" className="bg-white py-14 sm:py-20">
+    <section id="doctor" className="bg-white py-10 sm:py-14">
       <div className="mx-auto grid w-full max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8">
         <div className="relative min-h-[380px] overflow-hidden rounded-lg bg-[#071E63] shadow-2xl shadow-[#071E63]/15 sm:min-h-[520px]">
           <Image
@@ -613,24 +636,28 @@ function DoctorSection() {
 
 function RecoverySection() {
   return (
-    <section className="bg-[#071E63] py-14 text-white sm:py-20">
+    <section className="bg-[#071E63] py-10 text-white sm:py-14">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Recovery path"
           title="A simple journey from pain to movement"
           tamil="வலியிலிருந்து இயக்கம் வரை"
-          text="The page explains the care process with quick visuals and short labels so people understand what happens before they call."
+        
           tone="dark"
         />
         <div className="mt-6 sm:mt-10 grid gap-3 sm:gap-4 md:grid-cols-3">
           {recoverySteps.map((step, index) => (
             <div key={step.title} className="rounded-lg border border-white/20 bg-white/[0.08] p-4 sm:p-6">
-              <div className="flex size-10 sm:size-12 items-center justify-center rounded-lg bg-[#FFD447] text-lg sm:text-xl font-black text-[#071E63]">
-                {index + 1}
+              <div className="flex items-start gap-3 sm:gap-4">
+                <div className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-lg bg-[#FFD447] text-lg sm:text-xl font-black text-[#071E63]">
+                  {index + 1}
+                </div>
+                <div className="pt-0.5 sm:pt-1">
+                  <h3 className="text-lg sm:text-2xl font-black text-white leading-tight">{step.title}</h3>
+                  <p className="mt-0.5 sm:mt-1 text-sm sm:text-base font-extrabold text-[#FFD447]">{step.tamil}</p>
+                </div>
               </div>
-              <h3 className="mt-3 sm:mt-5 text-xl sm:text-2xl font-black text-white">{step.title}</h3>
-              <p className="mt-1 text-sm sm:text-base font-extrabold text-[#FFD447]">{step.tamil}</p>
-              <p className="mt-2 sm:mt-4 text-sm sm:text-base leading-snug sm:leading-7 text-white/80">{step.text}</p>
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base leading-snug sm:leading-7 text-white/80">{step.text}</p>
             </div>
           ))}
         </div>
@@ -641,7 +668,7 @@ function RecoverySection() {
 
 function TimingLocationSection() {
   return (
-    <section id="timing" className="bg-white py-14 sm:py-20">
+    <section id="timing" className="bg-white py-10 sm:py-14">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
@@ -650,15 +677,17 @@ function TimingLocationSection() {
               title="Timing, call button, and landmark are always easy to find"
               tamil="நேரம், அழைப்பு, முகவரி தெளிவாக"
             />
-            <div className="mt-7 grid gap-3">
+            <div className="mt-7 grid grid-cols-3 gap-2 sm:gap-3">
               {clinic.timings.map((time) => (
-                <div key={time.label} className="flex items-center gap-4 rounded-lg border border-slate-200 bg-[#FFFDF6] p-4">
-                  <CalendarClock className="size-6 shrink-0 text-[#E51B23]" aria-hidden="true" />
+                <div key={time.label} className="flex flex-col sm:flex-row items-center sm:items-center justify-center gap-1.5 sm:gap-4 rounded-lg border border-slate-200 bg-[#FFFDF6] p-2 sm:p-4 text-center sm:text-left">
+                  <CalendarClock className="size-5 sm:size-6 shrink-0 text-[#E51B23]" aria-hidden="true" />
                   <div>
-                    <p className="font-black text-[#071E63]">
-                      {time.label} <span className="text-[#071E63]/50">/ {time.tamil}</span>
+                    <p className="text-[11px] sm:text-base font-black text-[#071E63] leading-tight">
+                      <span className="block sm:inline">{time.label}</span>
+                      <span className="hidden sm:inline text-[#071E63]/50 sm:ml-1">/</span>
+                      <span className="block sm:inline text-[#071E63]/60 sm:ml-1 text-[9px] sm:text-base">{time.tamil}</span>
                     </p>
-                    <p className="font-bold text-slate-700">{time.value}</p>
+                    <p className="mt-1 sm:mt-0 text-[9px] sm:text-sm font-bold text-slate-700 leading-tight">{time.value}</p>
                   </div>
                 </div>
               ))}
@@ -717,7 +746,7 @@ function TimingLocationSection() {
 
 function TestimonialsSection() {
   return (
-    <section id="testimonials" className="bg-[#071E63] py-14 sm:py-20 text-white overflow-hidden">
+    <section id="testimonials" className="bg-[#071E63] py-10 sm:py-14 text-white overflow-hidden">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Reviews"
@@ -801,7 +830,7 @@ function TestimonialsSection() {
 
 function FaqSection() {
   return (
-    <section id="questions" className="bg-[#FFF7D6] py-14 sm:py-20">
+    <section id="questions" className="bg-[#FFF7D6] py-10 sm:py-14">
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Questions"
@@ -925,5 +954,25 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function AboutClinicSection() {
+  return (
+    <section id="about" className="bg-[#F7FAFF] py-10 sm:py-14">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+        <SectionHeading
+          eyebrow="About Us"
+          title="எங்களை பற்றி"
+          tamil=""
+          align="center"
+        />
+        <div className="mt-5 bg-white p-5 sm:p-7 rounded-xl shadow-lg shadow-[#071E63]/5 border border-slate-100">
+          <p className="text-sm sm:text-base lg:text-lg font-bold leading-relaxed sm:leading-8 text-[#071E63]">
+            திண்டுக்கல் நகரில் மையப் பகுதியில் கிழக்கு கோவிந்தாபுரத்தில் எங்களது கிளினிக் 19 வருடங்கள் அனுபவம் வாய்ந்த மருத்துவரால் 15 வருடங்கள் செயல்பட்டுக் கொண்டு வருகிறது. அரசு மருத்துவமனை மற்றும் தனியார் மருத்துவமனைகளில் பரிந்துரைக்கப்படும் பிசியோதெரபி சம்பந்தமான அனைத்து வித சிகிச்சைகளும் நவீன கருவிகளைக் கொண்டு மனோதத்துவ ரீதியான முறையிலும் சிறப்பான சிகிச்சை நியாயமான கட்டணத்தில் வழங்கப்பட்டு வருகிறது.
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }

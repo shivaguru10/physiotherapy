@@ -1,11 +1,16 @@
 export const clinic = {
-  name: "Jeya Physiotherapy Clinic ",
+  name: "Jeya Physiotherapy Clinic",
   tamilName: "ஜெயா பிசியோ கிளினிக்",
-  doctor: "Dr. X.sasikala jeyaceline",
+  doctor: "Dr. X. Sasikala Jeyaceline",
   tamilDoctor: "Dr. X. சசிகலா ஜெயசிலின்",
   qualification: "B.P.T, MIAP",
   phoneDisplay: "94867 33238",
   phoneHref: "tel:+919486733238",
+  phone: "+91-94867-33238",
+  siteUrl: "https://jeyaphysiotherapyclinicdgl.com",
+  priceRange: "₹₹",
+  businessType: "Physiotherapist",
+  geo: { latitude: "10.3710", longitude: "77.9734" },
   whatsappHref:
     "https://wa.me/919486733238?text=Hi%2C%20I%20want%20to%20book%20a%20physiotherapy%20appointment.",
   mapsHref:
@@ -14,6 +19,11 @@ export const clinic = {
     "https://www.google.com/maps/embed?pb=!4v1779714909280!6m8!1m7!1sJ1kZxyhW-PWJ8pxQ4JX-Ug!2m2!1d10.37104805586831!2d77.97344026865146!3f175.65960555401816!4f0.13927050375711758!5f0.7820865974627469",
   address:
     "Opposite Saiva Perumakkal Peravai Thirumana Mandapam, 89, East Govindapuram, Dindigul - 624001.",
+  streetAddress: "89, East Govindapuram",
+  city: "Dindigul",
+  state: "Tamil Nadu",
+  postalCode: "624001",
+  country: "IN",
   tamilAddress:
     "சைவப்பெருமக்கள் பேரவை திருமண மண்டபம் எதிரில், 89, கிழக்கு கோவிந்தாபுரம், திண்டுக்கல் - 624001.",
   timings: [
@@ -104,19 +114,35 @@ export const recoverySteps = [
 export const faqs = [
   {
     question: "Do I need to call before visiting?",
-    answer: "Calling first is best so the clinic can guide you on timing and availability.",
+    answer: "Calling first is best so the clinic can guide you on timing and availability. You can call or WhatsApp 94867 33238.",
   },
   {
     question: "Is Sunday open?",
-    answer: "Sunday is closed. Morning and evening sessions are available on working days.",
+    answer: "Sunday is closed. Morning sessions run 10:30 AM - 1:00 PM and evening sessions run 5:00 PM - 8:00 PM on all working days.",
   },
   {
     question: "Can elderly patients visit?",
-    answer: "Yes. Mobility, balance, joint stiffness, and weakness-related care are included.",
+    answer: "Yes. Mobility, balance, joint stiffness, and weakness-related care for senior patients are all available at the clinic.",
   },
   {
     question: "Is care available for paralysis or nerve weakness?",
-    answer: "Yes. Neuro rehabilitation support is part of the clinic's listed services.",
+    answer: "Yes. Neuro rehabilitation for paralysis, facial palsy, hand and leg weakness, and spinal conditions is part of the clinic's services.",
+  },
+  {
+    question: "What physiotherapy treatments are available in Dindigul?",
+    answer: "Jeya Physiotherapy Clinic in Dindigul offers IFT therapy, traction, wax therapy, manual therapy, exercise therapy, and posture correction — covering neck pain, back pain, knee pain, and neurological conditions.",
+  },
+  {
+    question: "Where is Jeya Physiotherapy Clinic located?",
+    answer: "The clinic is located at 89, East Govindapuram, Dindigul - 624001, opposite Saiva Perumakkal Peravai Thirumana Mandapam.",
+  },
+  {
+    question: "How many years of experience does the physiotherapist have?",
+    answer: "Dr. X. Sasikala Jeyaceline has 19+ years of physiotherapy experience and holds a B.P.T degree with MIAP membership.",
+  },
+  {
+    question: "Is the physiotherapy fee affordable?",
+    answer: "Yes. The clinic provides high-quality, evidence-based physiotherapy care at affordable and transparent fees for all patients.",
   },
 ];
 
