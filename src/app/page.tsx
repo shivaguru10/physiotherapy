@@ -359,7 +359,7 @@ function TreatmentsSection() {
           eyebrow="Treatments"
           title="Pain relief, mobility and rehabilitation care"
           tamil="வலி நிவாரணம், இயக்கம் மற்றும் மீட்பு சிகிச்சை"
-          text="A clearer treatment section with real therapy visuals, quick counters, and the clinic flyer conditions arranged for easy mobile scanning."
+         
         />
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {treatmentShowcases.map((care, index) => (
@@ -491,9 +491,7 @@ function ConditionsTreatedSection() {
                 Flyer-listed problems, cleaned up for easy reading
               </h3>
             </div>
-            <p className="max-w-xl text-sm font-semibold leading-6 text-slate-700 sm:text-right">
-              The original Tamil flyer items are grouped clearly so patients can quickly find their pain, nerve, joint, or mobility concern.
-            </p>
+            
           </div>
           <div className="mt-6 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="grid grid-cols-2 gap-2 sm:gap-3">
@@ -865,8 +863,8 @@ function FaqSection() {
 
 function Footer() {
   return (
-    <footer className="relative bg-[#071E63] pb-32 pt-10 text-white sm:pb-10">
-      <div className="absolute -top-6 right-4 z-20 sm:right-6 lg:right-8">
+    <footer className="relative bg-[#071E63] pb-28 pt-8 text-white sm:pb-10 sm:pt-10">
+      <div className="absolute -top-5 right-4 z-20 sm:-top-6 sm:right-6 lg:right-8">
         <a
           href="#home"
           className="flex size-10 items-center justify-center rounded-full bg-[#FFD447] text-[#071E63] shadow-xl shadow-yellow-950/20 ring-4 ring-white/90 transition hover:-translate-y-0.5 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFD447] sm:size-12"
@@ -875,21 +873,21 @@ function Footer() {
           <ArrowUp className="size-5 sm:size-6" strokeWidth={3} aria-hidden="true" />
         </a>
       </div>
-      <div className="mx-auto w-full max-w-7xl px-4 pr-20 sm:px-6 lg:px-8">
-        <div className="grid gap-7 border-b border-white/15 pb-7 sm:grid-cols-[1.25fr_0.75fr] lg:grid-cols-[1.25fr_0.75fr_0.8fr_1.05fr]">
+      <div className="mx-auto w-full max-w-7xl px-4 pr-16 sm:px-6 lg:px-8">
+        <div className="grid gap-5 border-b border-white/15 pb-5 sm:grid-cols-[1.25fr_0.75fr] lg:grid-cols-[1.25fr_0.75fr_0.8fr_1.05fr] sm:gap-7 sm:pb-7">
           <div>
-            <p className="text-2xl font-black leading-tight">{clinic.name}</p>
-            <p className="mt-1 font-bold text-[#FFD447]">{clinic.tamilName}</p>
-            <p className="mt-3 max-w-md text-sm font-semibold leading-6 text-white/72">
+            <p className="text-xl sm:text-2xl font-black leading-tight">{clinic.name}</p>
+            <p className="mt-0.5 sm:mt-1 font-bold text-[#FFD447] text-sm sm:text-base">{clinic.tamilName}</p>
+            <p className="mt-2.5 max-w-md text-xs sm:text-sm font-semibold leading-relaxed text-white/72 sm:mt-3 sm:leading-6">
               Patient-first physiotherapy care for pain relief, mobility, neuro rehabilitation, and local families in Dindigul.
             </p>
-            <p className="mt-3 text-sm font-black text-white">{clinic.doctor}</p>
-            <p className="mt-1 text-sm font-bold text-white/70">{clinic.qualification}</p>
+            <p className="mt-2.5 text-sm font-black text-white sm:mt-3">{clinic.doctor}</p>
+            <p className="mt-0.5 text-xs font-bold text-white/70 sm:mt-1 sm:text-sm">{clinic.qualification}</p>
           </div>
 
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Quick links</p>
-            <nav className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm" aria-label="Footer quick links">
+            <p className="text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Quick links</p>
+            <nav className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs sm:text-sm sm:mt-4 sm:gap-y-2" aria-label="Footer quick links">
               {footerQuickLinks.map((link) => (
                 <a key={link.href} href={link.href} className="font-bold text-white/75 transition hover:text-[#FFD447]">
                   {link.label}
@@ -899,11 +897,11 @@ function Footer() {
           </div>
 
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Care</p>
-            <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm lg:grid-cols-1">
+            <p className="text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Care</p>
+            <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs sm:text-sm lg:grid-cols-1 sm:mt-4 sm:gap-y-2">
               {footerServices.map((service) => (
-                <li key={service} className="flex items-center gap-2 font-bold text-white/75">
-                  <CheckCircle2 className="size-4 shrink-0 text-[#0F9F9A]" aria-hidden="true" />
+                <li key={service} className="flex items-center gap-1.5 sm:gap-2 font-bold text-white/75">
+                  <CheckCircle2 className="size-3.5 sm:size-4 shrink-0 text-[#0F9F9A]" aria-hidden="true" />
                   {service}
                 </li>
               ))}
@@ -911,43 +909,43 @@ function Footer() {
           </div>
 
           <div className="sm:col-span-2 lg:col-span-1">
-            <p className="text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Visit</p>
-            <p className="mt-4 text-sm font-semibold leading-6 text-white/75">{clinic.address}</p>
-            <div className="mt-4 grid gap-2 min-[420px]:grid-cols-2">
+            <p className="text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#FFD447]">Visit</p>
+            <p className="mt-2.5 text-xs sm:text-sm font-semibold leading-relaxed text-white/75 sm:mt-4 sm:leading-6">{clinic.address}</p>
+            <div className="mt-3 grid grid-cols-2 gap-2 sm:mt-4">
               <a
                 href={clinic.mapsHref}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-[#FFD447] px-3 text-sm font-black text-[#071E63] transition hover:bg-white"
+                className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg bg-[#FFD447] px-2.5 text-xs font-black text-[#071E63] transition hover:bg-white sm:min-h-11 sm:px-3 sm:text-sm sm:gap-2"
               >
-                <MapPinned className="size-4" aria-hidden="true" />
+                <MapPinned className="size-3.5 sm:size-4" aria-hidden="true" />
                 Direction
               </a>
               <a
                 href={clinic.phoneHref}
-                className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 text-sm font-black text-white transition hover:bg-white hover:text-[#071E63]"
+                className="inline-flex min-h-10 items-center justify-center gap-1.5 rounded-lg border border-white/20 bg-white/10 px-2.5 text-xs font-black text-white transition hover:bg-white hover:text-[#071E63] sm:min-h-11 sm:px-3 sm:text-sm sm:gap-2"
               >
-                <PhoneCall className="size-4" aria-hidden="true" />
+                <PhoneCall className="size-3.5 sm:size-4" aria-hidden="true" />
                 Call
               </a>
             </div>
           </div>
         </div>
 
-        <div className="grid gap-3 py-4 text-xs font-bold text-white/60 sm:grid-cols-2 sm:items-center">
+        <div className="grid gap-2 py-3 text-[11px] sm:text-xs font-bold text-white/60 sm:grid-cols-2 sm:items-center sm:gap-3 sm:py-4">
           <p>© 2026 {clinic.name}</p>
           <a
             href="https://www.blitzsolutions.online/"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex max-w-full flex-wrap items-center gap-2 justify-self-start rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-white/70 transition hover:border-[#FFD447]/40 hover:bg-white/10 hover:text-white sm:flex-nowrap sm:justify-self-end lg:mr-36 xl:mr-44"
+            className="inline-flex max-w-full flex-wrap items-center gap-2 justify-self-start rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-white/70 transition hover:border-[#FFD447]/40 hover:bg-white/10 hover:text-white sm:flex-nowrap sm:justify-self-end lg:mr-36 xl:mr-44 sm:px-3 sm:py-2"
           >
             <span>Designed & developed by</span>
-            <span className="inline-flex min-h-8 items-center rounded-full bg-white px-3 shadow-sm">
+            <span className="inline-flex min-h-7 items-center rounded-full bg-white px-2.5 shadow-sm sm:min-h-8 sm:px-3">
               <Image
                 src="/logo/blitz-logo-clean.png"
                 alt="Blitz Solutions"
                 width={82}
                 height={24}
-                className="h-5 w-auto"
+                className="h-4 sm:h-5 w-auto"
               />
             </span>
           </a>
