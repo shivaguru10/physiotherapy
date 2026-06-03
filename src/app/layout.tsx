@@ -105,6 +105,8 @@ export const viewport: Viewport = {
   themeColor: "#071E63",
 };
 
+import { PromoPopup } from "@/components/promo-popup";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -129,7 +131,10 @@ export default function RootLayout({
         {/* Language */}
         <meta httpEquiv="content-language" content="en, ta" />
       </head>
-      <body suppressHydrationWarning>{children}</body>
+      <body suppressHydrationWarning>
+        {children}
+        <PromoPopup />
+      </body>
     </html>
   );
 }
