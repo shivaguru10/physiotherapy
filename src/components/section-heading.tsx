@@ -5,6 +5,8 @@ export function SectionHeading({
   text,
   align = "left",
   tone = "light",
+  titleClassName,
+  tamilClassName,
 }: {
   eyebrow?: string;
   title: string;
@@ -12,6 +14,8 @@ export function SectionHeading({
   text?: string;
   align?: "left" | "center";
   tone?: "light" | "dark";
+  titleClassName?: string;
+  tamilClassName?: string;
 }) {
   const isDark = tone === "dark";
 
@@ -22,16 +26,16 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 className={isDark ? "text-balance text-3xl font-black leading-tight text-white sm:text-4xl" : "text-balance text-3xl font-black leading-tight text-[#071E63] sm:text-4xl"}>
+      <h2 className={titleClassName || (isDark ? "text-2xl font-black leading-tight text-white sm:text-4xl sm:text-balance" : "text-2xl font-black leading-tight text-[#071E63] sm:text-4xl sm:text-balance")}>
         {title}
       </h2>
       {tamil ? (
-        <p className={isDark ? "mt-2 text-xl font-extrabold text-[#FFD447]" : "mt-2 text-xl font-extrabold text-[#071E63]/80"}>
+        <p className={tamilClassName || (isDark ? "mt-2 text-lg font-extrabold text-[#FFD447] sm:text-xl" : "mt-2 text-lg font-extrabold text-[#071E63]/80 sm:text-xl")}>
           {tamil}
         </p>
       ) : null}
       {text ? (
-        <p className={isDark ? "mt-4 text-base leading-7 text-white/80 sm:text-lg" : "mt-4 text-base leading-7 text-slate-700 sm:text-lg"}>
+        <p className={isDark ? "mt-4 text-sm leading-relaxed text-white/80 sm:text-lg sm:leading-7" : "mt-4 text-sm leading-relaxed text-slate-700 sm:text-lg sm:leading-7"}>
           {text}
         </p>
       ) : null}

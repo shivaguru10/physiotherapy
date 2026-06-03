@@ -674,6 +674,8 @@ function TimingLocationSection() {
               eyebrow="Visit"
               title="Timing, call button, and landmark are always easy to find"
               tamil="நேரம், அழைப்பு, முகவரி தெளிவாக"
+              titleClassName="text-sm font-black leading-tight text-[#071E63] sm:text-4xl sm:text-balance"
+              tamilClassName="mt-1 text-xs font-extrabold text-[#071E63]/80 sm:mt-2 sm:text-xl"
             />
             <div className="mt-7 grid grid-cols-3 gap-2 sm:gap-3">
               {clinic.timings.map((time) => (
@@ -835,6 +837,8 @@ function FaqSection() {
           title="Fast answers before calling"
           tamil="அழைக்கும் முன் தெரிந்துகொள்ள"
           align="center"
+          titleClassName="text-lg font-black leading-tight text-[#071E63] sm:text-4xl sm:text-balance"
+          tamilClassName="mt-1 text-sm font-extrabold text-[#071E63]/80 sm:mt-2 sm:text-xl"
         />
         <div className="mt-8 sm:mt-12 mx-auto max-w-3xl flex flex-col gap-3 sm:gap-4">
           {faqs.map((faq) => (
